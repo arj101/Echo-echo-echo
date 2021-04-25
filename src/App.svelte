@@ -2,7 +2,6 @@
   export let convertToAv;
 
   import { fade, fly } from "svelte/transition";
-  import App from "../../aviationiser/src/App.svelte";
 
   let input;
   let recursionLevel = 1;
