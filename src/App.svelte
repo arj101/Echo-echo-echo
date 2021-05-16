@@ -2,11 +2,17 @@
   export let convertToAv;
 
   import { fade, fly } from "svelte/transition";
+  import Checkbox from "./Checkbox.svelte";
+
+  import convertFromAv from './convertFromAv.js'
 
   let input;
   let recursionLevel = 1;
 
   let settingsMenuState = false;
+
+  let reverseMode = false;
+  let addSpaceBetweenChars = false;
 
   const placeholders = [
     "PHNL",
@@ -21,33 +27,82 @@
     "PHNY",
   ];
 
+
   let placeholder =
     placeholders[Math.floor(Math.random() * placeholders.length)];
 
-  let convertedText = convertToAvPhonetics(placeholder, recursionLevel);
+  let convertedText = convertText(placeholder, recursionLevel);
 
   function onInput() {
-    if (input.length === 0) {
-      placeholder =
-        placeholders[Math.floor(Math.random() * placeholders.length)];
-      convertedText = convertToAvPhonetics(placeholder, recursionLevel);
-      return;
+    if (reverseMode) {
+      if (input) {
+        convertedText = convertText(input, recursionLevel);
+      } else {
+        let outputFieldText = placeholders[Math.floor(Math.random() * placeholders.length)];
+        placeholder = convertToAv(outputFieldText, recursionLevel);
+        convertedText = outputFieldText;
+      }
+    } else {
+      if (input) {
+        convertedText = convertToAv(input, recursionLevel);
+      } else {
+        placeholder = placeholders[Math.floor(Math.random() * placeholders.length)];
+        convertedText = convertToAv(placeholder, recursionLevel);
+      }
     }
-    convertedText = convertToAvPhonetics(input, recursionLevel);
   }
 
-  function convertToAvPhonetics(text, recursionLevel) {
-    return convertToAv(text, recursionLevel).split("");
+  function convertText(text, recursionLevel) {
+    let convertedText;
+    if (reverseMode) {
+      if (addSpaceBetweenChars) {
+        convertedText = convertFromAv(text, recursionLevel).split("");
+      } else {
+        convertedText = convertFromAv(text, recursionLevel).split(" ");
+      }
+    } else {
+      convertedText = convertToAv(text, recursionLevel).split("")
+    }
+    return convertedText;
   }
 
   function toggleSettings() {
     settingsMenuState = !settingsMenuState;
-    console.log(settingsMenuState);
   }
 
-  function updateConvertedText() {
-    let text = input || placeholder;
-    convertedText = convertToAvPhonetics(text, recursionLevel);
+
+  function updatePlaceholder() {
+    if (reverseMode) {
+      placeholder =
+        convertToAv(placeholders[Math.floor(Math.random() * placeholders.length)], recursionLevel);
+    } else {
+      placeholder =
+        placeholders[Math.floor(Math.random() * placeholders.length)];
+    }
+  }
+
+  function toggleReverseMode() {
+    reverseMode = !reverseMode;
+    if (reverseMode) {
+      let outputFieldText = placeholders[Math.floor(Math.random() * placeholders.length)];
+      placeholder = convertToAv(outputFieldText, recursionLevel);
+      if (input) {
+        convertedText = convertText(input, recursionLevel);
+      } else {
+        convertedText = outputFieldText;
+      }
+    } else {
+      placeholder = placeholders[Math.floor(Math.random() * placeholders.length)];
+      if (input) {
+        convertedText = convertToAv(input, recursionLevel);
+      } else {
+        convertedText = convertToAv(placeholder, recursionLevel);
+      }
+    }
+  }
+  function toggleSpaceInbetween() {
+    addSpaceBetweenChars = !addSpaceBetweenChars;
+    onInput();
   }
 </script>
 
@@ -83,8 +138,8 @@
     in:fly={{ y: -300, duration: 400 }}
     out:fly={{ y: 300, duration: 300 }}
   >
-    <div id="recurs-lvl">
-      <label id="recurs-lvl-label" for="recurs-lvl-set"
+    <div class="settings-options">
+      <label class="settings-label" for="recurs-lvl-set"
         >Recursion level: {recursionLevel}</label
       >
       <input
@@ -93,8 +148,20 @@
         max="3"
         bind:value={recursionLevel}
         id="recurs-lvl-set"
-        on:change={updateConvertedText}
+        on:change={onInput}
       />
+    </div>
+    <div class="settings-options"  style="margin-top: 2rem" >
+      <label class="settings-label"
+        >Reverse mode</label
+      >
+      <Checkbox checked={reverseMode} on:click={toggleReverseMode}/>
+      {#if reverseMode}
+      <label class="settings-label" in:fly={{ x: -100, duration: 300}} out:fly={{ x: 100, duration: 300}}
+        >Add space between characters</label
+      >
+      <Checkbox checked={addSpaceBetweenChars} on:click={toggleSpaceInbetween}/>
+      {/if}
     </div>
   </div>
 {/if}
@@ -280,7 +347,7 @@
     padding: 2rem;
   }
 
-  #recurs-lvl {
+  .settings-options {
     width: 75%;
     height: fit-content;
     margin: 0;
@@ -325,7 +392,7 @@
     border-radius: 0;
   }
 
-  #recurs-lvl-label {
+  .settings-label {
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 300;
     color: white;
