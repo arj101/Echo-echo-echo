@@ -40,7 +40,11 @@
       } else {
         let outputFieldText = placeholders[Math.floor(Math.random() * placeholders.length)];
         placeholder = convertToAv(outputFieldText, recursionLevel);
-        convertedText = outputFieldText;
+        if (addSpaceBetweenChars) {
+          convertedText = outputFieldText.split("").join(" ");
+        } else {
+          convertedText = outputFieldText;
+        }
       }
     } else {
       if (input) {
@@ -56,12 +60,12 @@
     let convertedText;
     if (reverseMode) {
       if (addSpaceBetweenChars) {
-        convertedText = convertFromAv(text, recursionLevel).split("");
+        convertedText = convertFromAv(text, recursionLevel);
       } else {
         convertedText = convertFromAv(text, recursionLevel).split(" ");
       }
     } else {
-      convertedText = convertToAv(text, recursionLevel).split("")
+      convertedText = convertToAv(text, recursionLevel);
     }
     return convertedText;
   }
@@ -367,8 +371,9 @@
     appearance: none;
     height: 1rem;
     width: 100%;
-    opacity: 0.4;
+    opacity: 0.5;
     transition: opacity 500ms ease;
+    cursor: pointer;
   }
 
   #recurs-lvl-set::-webkit-slider-thumb {
@@ -377,8 +382,7 @@
     width: 1rem;
     height: 1rem;
     border: none;
-    background-color: hsl(223, 82%, 69%);
-    cursor: pointer;
+    background-color: #F17171;
     border-radius: 0;
   }
 
@@ -387,8 +391,7 @@
     width: 1rem;
     height: 1rem;
     border: none;
-    background-color: hsl(223, 82%, 69%);
-    cursor: pointer;
+    background-color: #F17171;
     border-radius: 0;
   }
 

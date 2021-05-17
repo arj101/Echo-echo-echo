@@ -1018,7 +1018,7 @@
     	return child_ctx;
     }
 
-    // (127:6) {#each convertedText as char}
+    // (131:6) {#each convertedText as char}
     function create_each_block(ctx) {
     	let span;
     	let t_value = /*char*/ ctx[17] + "";
@@ -1030,8 +1030,8 @@
     		c: function create() {
     			span = element("span");
     			t = text(t_value);
-    			attr_dev(span, "class", "svelte-171l2ly");
-    			add_location(span, file, 127, 8, 3331);
+    			attr_dev(span, "class", "svelte-9kgiwp");
+    			add_location(span, file, 131, 8, 3440);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -1066,14 +1066,14 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(127:6) {#each convertedText as char}",
+    		source: "(131:6) {#each convertedText as char}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (135:0) {#if settingsMenuState == true}
+    // (139:0) {#if settingsMenuState == true}
     function create_if_block(ctx) {
     	let div2;
     	let div0;
@@ -1119,25 +1119,25 @@
     			create_component(checkbox.$$.fragment);
     			t6 = space();
     			if (if_block) if_block.c();
-    			attr_dev(label0, "class", "settings-label svelte-171l2ly");
+    			attr_dev(label0, "class", "settings-label svelte-9kgiwp");
     			attr_dev(label0, "for", "recurs-lvl-set");
-    			add_location(label0, file, 141, 6, 3666);
+    			add_location(label0, file, 145, 6, 3775);
     			attr_dev(input_1, "type", "range");
     			attr_dev(input_1, "min", "1");
     			attr_dev(input_1, "max", "3");
     			attr_dev(input_1, "id", "recurs-lvl-set");
-    			attr_dev(input_1, "class", "svelte-171l2ly");
-    			add_location(input_1, file, 144, 6, 3781);
-    			attr_dev(div0, "class", "settings-options svelte-171l2ly");
-    			add_location(div0, file, 140, 4, 3629);
-    			attr_dev(label1, "class", "settings-label svelte-171l2ly");
-    			add_location(label1, file, 154, 6, 4021);
-    			attr_dev(div1, "class", "settings-options svelte-171l2ly");
+    			attr_dev(input_1, "class", "svelte-9kgiwp");
+    			add_location(input_1, file, 148, 6, 3890);
+    			attr_dev(div0, "class", "settings-options svelte-9kgiwp");
+    			add_location(div0, file, 144, 4, 3738);
+    			attr_dev(label1, "class", "settings-label svelte-9kgiwp");
+    			add_location(label1, file, 158, 6, 4130);
+    			attr_dev(div1, "class", "settings-options svelte-9kgiwp");
     			set_style(div1, "margin-top", "2rem");
-    			add_location(div1, file, 153, 4, 3957);
+    			add_location(div1, file, 157, 4, 4066);
     			attr_dev(div2, "id", "settings-menu");
-    			attr_dev(div2, "class", "svelte-171l2ly");
-    			add_location(div2, file, 135, 2, 3513);
+    			attr_dev(div2, "class", "svelte-9kgiwp");
+    			add_location(div2, file, 139, 2, 3622);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -1235,14 +1235,14 @@
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(135:0) {#if settingsMenuState == true}",
+    		source: "(139:0) {#if settingsMenuState == true}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (159:6) {#if reverseMode}
+    // (163:6) {#if reverseMode}
     function create_if_block_1(ctx) {
     	let label;
     	let label_intro;
@@ -1264,8 +1264,8 @@
     			label.textContent = "Add space between characters";
     			t1 = space();
     			create_component(checkbox.$$.fragment);
-    			attr_dev(label, "class", "settings-label svelte-171l2ly");
-    			add_location(label, file, 159, 6, 4187);
+    			attr_dev(label, "class", "settings-label svelte-9kgiwp");
+    			add_location(label, file, 163, 6, 4296);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -1308,7 +1308,7 @@
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(159:6) {#if reverseMode}",
+    		source: "(163:6) {#if reverseMode}",
     		ctx
     	});
 
@@ -1387,45 +1387,45 @@
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
     			attr_dev(span0, "id", "e1");
-    			attr_dev(span0, "class", "svelte-171l2ly");
-    			add_location(span0, file, 111, 6, 2867);
+    			attr_dev(span0, "class", "svelte-9kgiwp");
+    			add_location(span0, file, 115, 6, 2976);
     			attr_dev(span1, "id", "e2");
-    			attr_dev(span1, "class", "svelte-171l2ly");
-    			add_location(span1, file, 111, 32, 2893);
+    			attr_dev(span1, "class", "svelte-9kgiwp");
+    			add_location(span1, file, 115, 32, 3002);
     			attr_dev(span2, "id", "e3");
-    			attr_dev(span2, "class", "svelte-171l2ly");
-    			add_location(span2, file, 112, 6, 2925);
+    			attr_dev(span2, "class", "svelte-9kgiwp");
+    			add_location(span2, file, 116, 6, 3034);
     			attr_dev(h1, "id", "title");
-    			attr_dev(h1, "class", "svelte-171l2ly");
-    			add_location(h1, file, 110, 4, 2845);
+    			attr_dev(h1, "class", "svelte-9kgiwp");
+    			add_location(h1, file, 114, 4, 2954);
     			if (img0.src !== (img0_src_value = "./Settings.svg")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "Settings");
     			attr_dev(img0, "id", "settings-svg");
-    			attr_dev(img0, "class", "select-disable svelte-171l2ly");
-    			add_location(img0, file, 115, 7, 3020);
+    			attr_dev(img0, "class", "select-disable svelte-9kgiwp");
+    			add_location(img0, file, 119, 7, 3129);
     			attr_dev(button, "id", "settings");
-    			attr_dev(button, "class", "svelte-171l2ly");
-    			add_location(button, file, 114, 4, 2965);
+    			attr_dev(button, "class", "svelte-9kgiwp");
+    			add_location(button, file, 118, 4, 3074);
     			attr_dev(header, "id", "topbar");
-    			attr_dev(header, "class", "svelte-171l2ly");
-    			add_location(header, file, 109, 2, 2820);
+    			attr_dev(header, "class", "svelte-9kgiwp");
+    			add_location(header, file, 113, 2, 2929);
     			attr_dev(input_1, "id", "input");
     			attr_dev(input_1, "placeholder", /*placeholder*/ ctx[5]);
-    			attr_dev(input_1, "class", "svelte-171l2ly");
-    			add_location(input_1, file, 124, 4, 3194);
+    			attr_dev(input_1, "class", "svelte-9kgiwp");
+    			add_location(input_1, file, 128, 4, 3303);
     			attr_dev(p, "id", "output");
-    			attr_dev(p, "class", "svelte-171l2ly");
-    			add_location(p, file, 125, 4, 3271);
+    			attr_dev(p, "class", "svelte-9kgiwp");
+    			add_location(p, file, 129, 4, 3380);
     			attr_dev(div, "id", "content");
-    			attr_dev(div, "class", "svelte-171l2ly");
-    			add_location(div, file, 123, 2, 3171);
+    			attr_dev(div, "class", "svelte-9kgiwp");
+    			add_location(div, file, 127, 2, 3280);
     			attr_dev(img1, "id", "plen");
     			if (img1.src !== (img1_src_value = "./Plen.svg")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Plen");
-    			attr_dev(img1, "class", "select-disable svelte-171l2ly");
-    			add_location(img1, file, 131, 2, 3401);
-    			attr_dev(main, "class", "svelte-171l2ly");
-    			add_location(main, file, 108, 0, 2811);
+    			attr_dev(img1, "class", "select-disable svelte-9kgiwp");
+    			add_location(img1, file, 135, 2, 3510);
+    			attr_dev(main, "class", "svelte-9kgiwp");
+    			add_location(main, file, 112, 0, 2920);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1605,7 +1605,12 @@
     			} else {
     				let outputFieldText = placeholders[Math.floor(Math.random() * placeholders.length)];
     				$$invalidate(5, placeholder = convertToAv(outputFieldText, recursionLevel));
-    				$$invalidate(6, convertedText = outputFieldText);
+
+    				if (addSpaceBetweenChars) {
+    					$$invalidate(6, convertedText = outputFieldText.split("").join(" "));
+    				} else {
+    					$$invalidate(6, convertedText = outputFieldText);
+    				}
     			}
     		} else {
     			if (input) {
@@ -1622,12 +1627,12 @@
 
     		if (reverseMode) {
     			if (addSpaceBetweenChars) {
-    				convertedText = convertFromAv(text, recursionLevel).split("");
+    				convertedText = convertFromAv(text, recursionLevel);
     			} else {
     				convertedText = convertFromAv(text, recursionLevel).split(" ");
     			}
     		} else {
-    			convertedText = convertToAv(text, recursionLevel).split("");
+    			convertedText = convertToAv(text, recursionLevel);
     		}
 
     		return convertedText;
