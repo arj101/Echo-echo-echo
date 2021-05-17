@@ -211,7 +211,6 @@
 {#if settingsMenuState}
   <style>
     #content, #plen, #copy-button, #copy-indicator{
-      filter: blur(0.2rem);
       pointer-events: none;
     }
     body {

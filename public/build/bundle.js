@@ -1443,7 +1443,7 @@
     	const block = {
     		c: function create() {
     			style = element("style");
-    			style.textContent = "#content, #plen, #copy-button, #copy-indicator{\n      filter: blur(0.2rem);\n      pointer-events: none;\n    }\n    body {\n      overflow: hidden;\n    }";
+    			style.textContent = "#content, #plen, #copy-button, #copy-indicator{\n      pointer-events: none;\n    }\n    body {\n      overflow: hidden;\n    }";
     			attr_dev(style, "class", "svelte-12te4a9");
     			add_location(style, file, 211, 2, 5662);
     		},
