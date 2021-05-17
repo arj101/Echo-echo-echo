@@ -1125,23 +1125,23 @@
     			if (if_block) if_block.c();
     			attr_dev(label0, "class", "settings-label svelte-zpmfjg");
     			attr_dev(label0, "for", "recurs-lvl-set");
-    			add_location(label0, file, 163, 6, 4503);
+    			add_location(label0, file, 163, 6, 4512);
     			attr_dev(input_1, "type", "range");
     			attr_dev(input_1, "min", "1");
     			attr_dev(input_1, "max", "3");
     			attr_dev(input_1, "id", "recurs-lvl-set");
     			attr_dev(input_1, "class", "svelte-zpmfjg");
-    			add_location(input_1, file, 166, 6, 4618);
+    			add_location(input_1, file, 166, 6, 4627);
     			attr_dev(div0, "class", "settings-options svelte-zpmfjg");
-    			add_location(div0, file, 162, 4, 4466);
+    			add_location(div0, file, 162, 4, 4475);
     			attr_dev(label1, "class", "settings-label svelte-zpmfjg");
-    			add_location(label1, file, 176, 6, 4858);
+    			add_location(label1, file, 176, 6, 4867);
     			attr_dev(div1, "class", "settings-options svelte-zpmfjg");
     			set_style(div1, "margin-top", "2rem");
-    			add_location(div1, file, 175, 4, 4794);
+    			add_location(div1, file, 175, 4, 4803);
     			attr_dev(div2, "id", "settings-menu");
     			attr_dev(div2, "class", "svelte-zpmfjg");
-    			add_location(div2, file, 157, 2, 4349);
+    			add_location(div2, file, 157, 2, 4358);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -1269,7 +1269,7 @@
     			t1 = space();
     			create_component(checkbox.$$.fragment);
     			attr_dev(label, "class", "settings-label svelte-zpmfjg");
-    			add_location(label, file, 181, 6, 5024);
+    			add_location(label, file, 181, 6, 5033);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -1333,10 +1333,10 @@
     			p = element("p");
     			p.textContent = "Copied!";
     			attr_dev(p, "class", "svelte-zpmfjg");
-    			add_location(p, file, 192, 4, 5422);
+    			add_location(p, file, 192, 4, 5431);
     			attr_dev(div, "id", "copy-indicator");
     			attr_dev(div, "class", "svelte-zpmfjg");
-    			add_location(div, file, 191, 2, 5323);
+    			add_location(div, file, 191, 2, 5332);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1385,7 +1385,7 @@
     			style = element("style");
     			style.textContent = "#output {\n      word-break: break-word;\n    }";
     			attr_dev(style, "class", "svelte-zpmfjg");
-    			add_location(style, file, 203, 2, 5551);
+    			add_location(style, file, 203, 2, 5560);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -1415,7 +1415,7 @@
     			style = element("style");
     			style.textContent = "#output {\n      word-break: break-all;\n    }";
     			attr_dev(style, "class", "svelte-zpmfjg");
-    			add_location(style, file, 197, 2, 5473);
+    			add_location(style, file, 197, 2, 5482);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -1581,6 +1581,7 @@
     			attr_dev(input1, "id", "copy-area");
     			attr_dev(input1, "class", "ssshhhh-Im-for-copying svelte-zpmfjg");
     			input1.value = /*convertedText*/ ctx[7];
+    			input1.readOnly = true;
     			add_location(input1, file, 153, 2, 4217);
     			attr_dev(main, "class", "svelte-zpmfjg");
     			add_location(main, file, 124, 0, 3299);

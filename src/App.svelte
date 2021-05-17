@@ -151,7 +151,7 @@
   </div>
   <img id="plen" src="./Plen.svg" alt="Plen" class="select-disable" />
   <button id="copy-button" on:click={copyOutput}><img src="./Copy.svg" alt="Copy"></button>
-  <input type="text" id="copy-area" class="ssshhhh-Im-for-copying" value={convertedText}/>
+  <input type="text" id="copy-area" class="ssshhhh-Im-for-copying" value={convertedText} readonly/>
 </main>
 
 {#if settingsMenuState == true}
