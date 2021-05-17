@@ -15,6 +15,7 @@ body {
 a {
 	color: rgb(0,100,200);
 	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 a:hover {
@@ -38,6 +39,7 @@ input, button, select, textarea {
 	box-sizing: border-box;
 	border: 1px solid #ccc;
 	border-radius: 2px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 input:disabled {

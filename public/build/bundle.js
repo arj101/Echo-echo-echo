@@ -1030,7 +1030,7 @@
     		c: function create() {
     			span = element("span");
     			t = text(t_value);
-    			attr_dev(span, "class", "svelte-o7h52g");
+    			attr_dev(span, "class", "svelte-1ixcpfl");
     			add_location(span, file, 131, 8, 3440);
     		},
     		m: function mount(target, anchor) {
@@ -1119,24 +1119,24 @@
     			create_component(checkbox.$$.fragment);
     			t6 = space();
     			if (if_block) if_block.c();
-    			attr_dev(label0, "class", "settings-label svelte-o7h52g");
+    			attr_dev(label0, "class", "settings-label svelte-1ixcpfl");
     			attr_dev(label0, "for", "recurs-lvl-set");
     			add_location(label0, file, 145, 6, 3775);
     			attr_dev(input_1, "type", "range");
     			attr_dev(input_1, "min", "1");
     			attr_dev(input_1, "max", "3");
     			attr_dev(input_1, "id", "recurs-lvl-set");
-    			attr_dev(input_1, "class", "svelte-o7h52g");
+    			attr_dev(input_1, "class", "svelte-1ixcpfl");
     			add_location(input_1, file, 148, 6, 3890);
-    			attr_dev(div0, "class", "settings-options svelte-o7h52g");
+    			attr_dev(div0, "class", "settings-options svelte-1ixcpfl");
     			add_location(div0, file, 144, 4, 3738);
-    			attr_dev(label1, "class", "settings-label svelte-o7h52g");
+    			attr_dev(label1, "class", "settings-label svelte-1ixcpfl");
     			add_location(label1, file, 158, 6, 4130);
-    			attr_dev(div1, "class", "settings-options svelte-o7h52g");
+    			attr_dev(div1, "class", "settings-options svelte-1ixcpfl");
     			set_style(div1, "margin-top", "2rem");
     			add_location(div1, file, 157, 4, 4066);
     			attr_dev(div2, "id", "settings-menu");
-    			attr_dev(div2, "class", "svelte-o7h52g");
+    			attr_dev(div2, "class", "svelte-1ixcpfl");
     			add_location(div2, file, 139, 2, 3622);
     		},
     		m: function mount(target, anchor) {
@@ -1264,7 +1264,7 @@
     			label.textContent = "Add space between characters";
     			t1 = space();
     			create_component(checkbox.$$.fragment);
-    			attr_dev(label, "class", "settings-label svelte-o7h52g");
+    			attr_dev(label, "class", "settings-label svelte-1ixcpfl");
     			add_location(label, file, 163, 6, 4296);
     		},
     		m: function mount(target, anchor) {
@@ -1387,44 +1387,44 @@
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
     			attr_dev(span0, "id", "e1");
-    			attr_dev(span0, "class", "svelte-o7h52g");
+    			attr_dev(span0, "class", "svelte-1ixcpfl");
     			add_location(span0, file, 115, 6, 2976);
     			attr_dev(span1, "id", "e2");
-    			attr_dev(span1, "class", "svelte-o7h52g");
+    			attr_dev(span1, "class", "svelte-1ixcpfl");
     			add_location(span1, file, 115, 32, 3002);
     			attr_dev(span2, "id", "e3");
-    			attr_dev(span2, "class", "svelte-o7h52g");
+    			attr_dev(span2, "class", "svelte-1ixcpfl");
     			add_location(span2, file, 116, 6, 3034);
     			attr_dev(h1, "id", "title");
-    			attr_dev(h1, "class", "svelte-o7h52g");
+    			attr_dev(h1, "class", "svelte-1ixcpfl");
     			add_location(h1, file, 114, 4, 2954);
     			if (img0.src !== (img0_src_value = "./Settings.svg")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "Settings");
     			attr_dev(img0, "id", "settings-svg");
-    			attr_dev(img0, "class", "select-disable svelte-o7h52g");
+    			attr_dev(img0, "class", "select-disable svelte-1ixcpfl");
     			add_location(img0, file, 119, 7, 3129);
     			attr_dev(button, "id", "settings");
-    			attr_dev(button, "class", "svelte-o7h52g");
+    			attr_dev(button, "class", "svelte-1ixcpfl");
     			add_location(button, file, 118, 4, 3074);
     			attr_dev(header, "id", "topbar");
-    			attr_dev(header, "class", "svelte-o7h52g");
+    			attr_dev(header, "class", "svelte-1ixcpfl");
     			add_location(header, file, 113, 2, 2929);
     			attr_dev(input_1, "id", "input");
     			attr_dev(input_1, "placeholder", /*placeholder*/ ctx[5]);
-    			attr_dev(input_1, "class", "svelte-o7h52g");
+    			attr_dev(input_1, "class", "svelte-1ixcpfl");
     			add_location(input_1, file, 128, 4, 3303);
     			attr_dev(p, "id", "output");
-    			attr_dev(p, "class", "svelte-o7h52g");
+    			attr_dev(p, "class", "svelte-1ixcpfl");
     			add_location(p, file, 129, 4, 3380);
     			attr_dev(div, "id", "content");
-    			attr_dev(div, "class", "svelte-o7h52g");
+    			attr_dev(div, "class", "svelte-1ixcpfl");
     			add_location(div, file, 127, 2, 3280);
     			attr_dev(img1, "id", "plen");
     			if (img1.src !== (img1_src_value = "./Plen.svg")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Plen");
-    			attr_dev(img1, "class", "select-disable svelte-o7h52g");
+    			attr_dev(img1, "class", "select-disable svelte-1ixcpfl");
     			add_location(img1, file, 135, 2, 3510);
-    			attr_dev(main, "class", "svelte-o7h52g");
+    			attr_dev(main, "class", "svelte-1ixcpfl");
     			add_location(main, file, 112, 0, 2920);
     		},
     		l: function claim(nodes) {

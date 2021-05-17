@@ -398,7 +398,7 @@
 
   .settings-label {
     font-family: "Noto Sans JP", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     color: white;
     cursor: url(../cursor1.png) 13 13, pointer;
   }
@@ -435,6 +435,9 @@
     #settings-menu {
       left: calc(15vw - 2rem);
       width: 70vw;
+    }
+    #recurs-lvl-set {
+      opacity: 1;
     }
   }
 </style>
