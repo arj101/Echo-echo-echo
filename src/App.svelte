@@ -349,6 +349,7 @@
     justify-content: start;
     flex-direction: column;
     padding: 2rem;
+    cursor: url(../cursor1.png) 13 13, auto;
   }
 
   .settings-options {
@@ -373,7 +374,7 @@
     width: 100%;
     opacity: 0.5;
     transition: opacity 500ms ease;
-    cursor: pointer;
+    cursor: url(../cursor1.png) 13 13, pointer;
   }
 
   #recurs-lvl-set::-webkit-slider-thumb {
@@ -399,10 +400,15 @@
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 300;
     color: white;
+    cursor: url(../cursor1.png) 13 13, pointer;
   }
 
   #recurs-lvl-set:hover {
     opacity: 1;
+  }
+
+  #recurs-lvl-set:active {
+    cursor: url(../cursor2.png) 15 10, pointer;
   }
 
   @media only screen and (max-width: 800px) {

@@ -32,7 +32,7 @@
     border-radius: 100%;
     background-color: rgba(255, 255, 255, 0);
     transition: all 300ms ease;
-    cursor: pointer;
+    cursor: url(../cursor1.png) 13 13, pointer;
     padding: 0.5rem;
   }
   button:hover {
@@ -40,5 +40,6 @@
   }
   button:active {
     background-color: rgba(255, 255, 255, 0.4);
+    cursor: url(../cursor2.png) 15 10, pointer;
   }
 </style>
