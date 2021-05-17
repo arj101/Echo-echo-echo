@@ -8,7 +8,6 @@ const init = async () => {
 	const app = new App({
 		target: document.body,
 		props: {
-			name: 'world',
 			convertToAv: convert_to_av
 		}
 	});

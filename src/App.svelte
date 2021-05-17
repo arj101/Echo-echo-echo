@@ -14,6 +14,8 @@
   let reverseMode = false;
   let addSpaceBetweenChars = false;
 
+  let showCopyIndicator = false;
+
   const placeholders = [
     "PHNL",
     "PHOG",
@@ -26,7 +28,6 @@
     "MKK",
     "PHNY",
   ];
-
 
   let placeholder =
     placeholders[Math.floor(Math.random() * placeholders.length)];
@@ -108,6 +109,17 @@
     addSpaceBetweenChars = !addSpaceBetweenChars;
     onInput();
   }
+
+  function copyOutput() {
+    const inputElement = document.querySelector("#copy-area")
+	  inputElement.select();
+	  inputElement.setSelectionRange(0, 99999); /* For mobile devices */
+	  document.execCommand("copy");
+    if (!showCopyIndicator) {
+      showCopyIndicator = true;
+      setTimeout(() => showCopyIndicator = false, 900);
+    }
+  }
 </script>
 
 <main>
@@ -126,7 +138,11 @@
     >
   </header>
   <div id="content">
-    <input id="input" bind:value={input} on:input={onInput} {placeholder} />
+    <!-- {#if reverseMode}
+      <textarea rows="4" class="input" on:input={onInput}>{input || ""}</textarea>   //maybe later
+    {:else} -->
+      <input class="input" bind:value={input} on:input={onInput} {placeholder}/>
+    <!-- {/if} -->
     <p id="output">
       {#each convertedText as char}
         <span transition:fade>{char}</span>
@@ -134,13 +150,15 @@
     </p>
   </div>
   <img id="plen" src="./Plen.svg" alt="Plen" class="select-disable" />
+  <button id="copy-button" on:click={copyOutput}><img src="./Copy.svg" alt="Copy"></button>
+  <input type="text" id="copy-area" class="ssshhhh-Im-for-copying" value={convertedText}/>
 </main>
 
 {#if settingsMenuState == true}
   <div
     id="settings-menu"
     in:fly={{ y: -300, duration: 400 }}
-    out:fly={{ y: 300, duration: 300 }}
+    out:fly={{ y: -300, duration: 400 }}
   >
     <div class="settings-options">
       <label class="settings-label" for="recurs-lvl-set"
@@ -168,6 +186,26 @@
       {/if}
     </div>
   </div>
+{/if}
+
+{#if showCopyIndicator}
+  <div id="copy-indicator" in:fly={{ y: 100, duration: 200}} out:fly={{ y: 100, duration: 400}}>
+    <p>Copied!</p>
+  </div>
+{/if}
+
+{#if reverseMode}
+  <style>
+    #output {
+      word-break: break-all;
+    }
+  </style>
+{:else}
+  <style>
+    #output {
+      word-break: break-word;
+    }
+  </style>
 {/if}
 
 <style>
@@ -221,7 +259,7 @@
     color: hsla(302, 23%, 75%, 1);
   }
 
-  #input {
+  .input {
     margin-top: 4rem;
     background-color: hsla(302, 22%, 96%, 1);
     border: none;
@@ -239,6 +277,10 @@
 
     transition: background-color 300ms ease;
     z-index: 1;
+  }
+
+  textarea {
+    resize: none;
   }
 
   #output {
@@ -274,7 +316,7 @@
     flex-direction: column;
   }
 
-  #input:focus {
+  .input:focus {
     outline: none;
     background-color: hsla(302, 22%, 90%, 1);
   }
@@ -343,7 +385,6 @@
     border-radius: 0.5rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
       rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-
     display: flex;
     align-items: center;
     justify-content: start;
@@ -411,11 +452,82 @@
     cursor: url(../cursor2.png) 15 10, pointer;
   }
 
+  #copy-button {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    margin: 0;
+    border: 2px solid #F17171;
+    outline: none;
+    padding: 1rem;
+    display: grid;
+    place-items: center;
+    background-color: #F17171;
+    border-radius: 100%;
+    z-index: 3;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.35) 0px 10px 15px -4px, rgba(0, 0, 0, 0.4) 0px 6px 9px -6px;
+    transition: all 300ms ease;
+  }
+
+  #copy-button img {
+    width: 1rem;
+    height: 1rem;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-drag: none;
+    -webkit-user-drag: none;
+  }
+
+  #copy-button:hover {
+    border: 2px solid #FFF;
+  }
+
+  #copy-button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 20px -4px inset, rgba(0, 0, 0, 0.3) 0px 6px 12px -6px inset;
+  }
+
+  #copy-area {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  #copy-indicator {
+    position: fixed;
+    bottom: 1rem;
+    right: 7rem;
+    margin: 0;
+    padding-inline: 2rem;
+    padding-block: 0.5rem;
+    border: none;
+    border-radius: 0.2rem;
+    background-color: #F17171;
+    display: grid;
+    place-items: center;
+    box-shadow: rgba(50, 50, 93, 0.35) 0px 10px 15px -4px, rgba(0, 0, 0, 0.4) 0px 6px 9px -6px;
+  }
+
+  #copy-indicator p {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
+  }
+
   @media only screen and (max-width: 800px) {
     #title {
       margin: 1rem;
     }
-    #input {
+    .input {
       margin-top: 5rem;
       width: 93vw;
       margin-inline: auto;
@@ -438,6 +550,15 @@
     }
     #recurs-lvl-set {
       opacity: 1;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    #copy-indicator {
+      bottom: 1rem;
+      left: 1rem;
+      right: auto;
+      width: calc(100vw - 10rem);
     }
   }
 </style>
