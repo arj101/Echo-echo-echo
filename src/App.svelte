@@ -208,6 +208,17 @@
   </style>
 {/if}
 
+{#if settingsMenuState}
+  <style>
+    #content, #plen, #copy-button, #copy-indicator{
+      filter: blur(0.2rem);
+      pointer-events: none;
+    }
+    body {
+      overflow: hidden;
+    }
+  </style>
+{/if}
 <style>
   .select-disable {
     -webkit-user-select: none;
@@ -228,6 +239,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
   }
   #topbar {
     background-color: hsla(302, 23%, 59%, 1);
@@ -330,7 +342,7 @@
     z-index: 0;
     -moz-user-select: none;
     -webkit-user-select: none;
-    transition: all 500ms cubic-bezier(0, 0.68, 0.25, 1.55);
+    transition: all 300ms ease;
     opacity: 1;
   }
 

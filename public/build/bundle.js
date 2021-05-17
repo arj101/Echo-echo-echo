@@ -1034,7 +1034,7 @@
     		c: function create() {
     			span = element("span");
     			t = text(t_value);
-    			attr_dev(span, "class", "svelte-zpmfjg");
+    			attr_dev(span, "class", "svelte-12te4a9");
     			add_location(span, file, 147, 8, 3984);
     		},
     		m: function mount(target, anchor) {
@@ -1078,7 +1078,7 @@
     }
 
     // (157:0) {#if settingsMenuState == true}
-    function create_if_block_2(ctx) {
+    function create_if_block_3(ctx) {
     	let div2;
     	let div0;
     	let label0;
@@ -1104,7 +1104,7 @@
     		});
 
     	checkbox.$on("click", /*toggleReverseMode*/ ctx[10]);
-    	let if_block = /*reverseMode*/ ctx[3] && create_if_block_3(ctx);
+    	let if_block = /*reverseMode*/ ctx[3] && create_if_block_4(ctx);
 
     	const block = {
     		c: function create() {
@@ -1123,24 +1123,24 @@
     			create_component(checkbox.$$.fragment);
     			t6 = space();
     			if (if_block) if_block.c();
-    			attr_dev(label0, "class", "settings-label svelte-zpmfjg");
+    			attr_dev(label0, "class", "settings-label svelte-12te4a9");
     			attr_dev(label0, "for", "recurs-lvl-set");
     			add_location(label0, file, 163, 6, 4512);
     			attr_dev(input_1, "type", "range");
     			attr_dev(input_1, "min", "1");
     			attr_dev(input_1, "max", "3");
     			attr_dev(input_1, "id", "recurs-lvl-set");
-    			attr_dev(input_1, "class", "svelte-zpmfjg");
+    			attr_dev(input_1, "class", "svelte-12te4a9");
     			add_location(input_1, file, 166, 6, 4627);
-    			attr_dev(div0, "class", "settings-options svelte-zpmfjg");
+    			attr_dev(div0, "class", "settings-options svelte-12te4a9");
     			add_location(div0, file, 162, 4, 4475);
-    			attr_dev(label1, "class", "settings-label svelte-zpmfjg");
+    			attr_dev(label1, "class", "settings-label svelte-12te4a9");
     			add_location(label1, file, 176, 6, 4867);
-    			attr_dev(div1, "class", "settings-options svelte-zpmfjg");
+    			attr_dev(div1, "class", "settings-options svelte-12te4a9");
     			set_style(div1, "margin-top", "2rem");
     			add_location(div1, file, 175, 4, 4803);
     			attr_dev(div2, "id", "settings-menu");
-    			attr_dev(div2, "class", "svelte-zpmfjg");
+    			attr_dev(div2, "class", "svelte-12te4a9");
     			add_location(div2, file, 157, 2, 4358);
     		},
     		m: function mount(target, anchor) {
@@ -1190,7 +1190,7 @@
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block_3(ctx);
+    					if_block = create_if_block_4(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(div1, null);
@@ -1237,7 +1237,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2.name,
+    		id: create_if_block_3.name,
     		type: "if",
     		source: "(157:0) {#if settingsMenuState == true}",
     		ctx
@@ -1247,7 +1247,7 @@
     }
 
     // (181:6) {#if reverseMode}
-    function create_if_block_3(ctx) {
+    function create_if_block_4(ctx) {
     	let label;
     	let label_intro;
     	let label_outro;
@@ -1268,7 +1268,7 @@
     			label.textContent = "Add space between characters";
     			t1 = space();
     			create_component(checkbox.$$.fragment);
-    			attr_dev(label, "class", "settings-label svelte-zpmfjg");
+    			attr_dev(label, "class", "settings-label svelte-12te4a9");
     			add_location(label, file, 181, 6, 5033);
     		},
     		m: function mount(target, anchor) {
@@ -1310,7 +1310,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3.name,
+    		id: create_if_block_4.name,
     		type: "if",
     		source: "(181:6) {#if reverseMode}",
     		ctx
@@ -1320,7 +1320,7 @@
     }
 
     // (191:0) {#if showCopyIndicator}
-    function create_if_block_1(ctx) {
+    function create_if_block_2(ctx) {
     	let div;
     	let p;
     	let div_intro;
@@ -1332,10 +1332,10 @@
     			div = element("div");
     			p = element("p");
     			p.textContent = "Copied!";
-    			attr_dev(p, "class", "svelte-zpmfjg");
+    			attr_dev(p, "class", "svelte-12te4a9");
     			add_location(p, file, 192, 4, 5431);
     			attr_dev(div, "id", "copy-indicator");
-    			attr_dev(div, "class", "svelte-zpmfjg");
+    			attr_dev(div, "class", "svelte-12te4a9");
     			add_location(div, file, 191, 2, 5332);
     		},
     		m: function mount(target, anchor) {
@@ -1367,7 +1367,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1.name,
+    		id: create_if_block_2.name,
     		type: "if",
     		source: "(191:0) {#if showCopyIndicator}",
     		ctx
@@ -1384,7 +1384,7 @@
     		c: function create() {
     			style = element("style");
     			style.textContent = "#output {\n      word-break: break-word;\n    }";
-    			attr_dev(style, "class", "svelte-zpmfjg");
+    			attr_dev(style, "class", "svelte-12te4a9");
     			add_location(style, file, 203, 2, 5560);
     		},
     		m: function mount(target, anchor) {
@@ -1407,15 +1407,45 @@
     }
 
     // (197:0) {#if reverseMode}
-    function create_if_block(ctx) {
+    function create_if_block_1(ctx) {
     	let style;
 
     	const block = {
     		c: function create() {
     			style = element("style");
     			style.textContent = "#output {\n      word-break: break-all;\n    }";
-    			attr_dev(style, "class", "svelte-zpmfjg");
+    			attr_dev(style, "class", "svelte-12te4a9");
     			add_location(style, file, 197, 2, 5482);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, style, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(style);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(197:0) {#if reverseMode}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (211:0) {#if settingsMenuState}
+    function create_if_block(ctx) {
+    	let style;
+
+    	const block = {
+    		c: function create() {
+    			style = element("style");
+    			style.textContent = "#content, #plen, #copy-button, #copy-indicator{\n      filter: blur(0.2rem);\n      pointer-events: none;\n    }\n    body {\n      overflow: hidden;\n    }";
+    			attr_dev(style, "class", "svelte-12te4a9");
+    			add_location(style, file, 211, 2, 5662);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -1429,7 +1459,7 @@
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(197:0) {#if reverseMode}",
+    		source: "(211:0) {#if settingsMenuState}",
     		ctx
     	});
 
@@ -1466,7 +1496,8 @@
     	let t11;
     	let t12;
     	let t13;
-    	let if_block2_anchor;
+    	let t14;
+    	let if_block3_anchor;
     	let current;
     	let mounted;
     	let dispose;
@@ -1482,16 +1513,17 @@
     		each_blocks[i] = null;
     	});
 
-    	let if_block0 = /*settingsMenuState*/ ctx[2] == true && create_if_block_2(ctx);
-    	let if_block1 = /*showCopyIndicator*/ ctx[5] && create_if_block_1(ctx);
+    	let if_block0 = /*settingsMenuState*/ ctx[2] == true && create_if_block_3(ctx);
+    	let if_block1 = /*showCopyIndicator*/ ctx[5] && create_if_block_2(ctx);
 
     	function select_block_type(ctx, dirty) {
-    		if (/*reverseMode*/ ctx[3]) return create_if_block;
+    		if (/*reverseMode*/ ctx[3]) return create_if_block_1;
     		return create_else_block;
     	}
 
     	let current_block_type = select_block_type(ctx);
     	let if_block2 = current_block_type(ctx);
+    	let if_block3 = /*settingsMenuState*/ ctx[2] && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
@@ -1532,58 +1564,60 @@
     			if (if_block1) if_block1.c();
     			t13 = space();
     			if_block2.c();
-    			if_block2_anchor = empty();
+    			t14 = space();
+    			if (if_block3) if_block3.c();
+    			if_block3_anchor = empty();
     			attr_dev(span0, "id", "e1");
-    			attr_dev(span0, "class", "svelte-zpmfjg");
+    			attr_dev(span0, "class", "svelte-12te4a9");
     			add_location(span0, file, 127, 6, 3355);
     			attr_dev(span1, "id", "e2");
-    			attr_dev(span1, "class", "svelte-zpmfjg");
+    			attr_dev(span1, "class", "svelte-12te4a9");
     			add_location(span1, file, 127, 32, 3381);
     			attr_dev(span2, "id", "e3");
-    			attr_dev(span2, "class", "svelte-zpmfjg");
+    			attr_dev(span2, "class", "svelte-12te4a9");
     			add_location(span2, file, 128, 6, 3413);
     			attr_dev(h1, "id", "title");
-    			attr_dev(h1, "class", "svelte-zpmfjg");
+    			attr_dev(h1, "class", "svelte-12te4a9");
     			add_location(h1, file, 126, 4, 3333);
     			if (img0.src !== (img0_src_value = "./Settings.svg")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "Settings");
     			attr_dev(img0, "id", "settings-svg");
-    			attr_dev(img0, "class", "select-disable svelte-zpmfjg");
+    			attr_dev(img0, "class", "select-disable svelte-12te4a9");
     			add_location(img0, file, 131, 7, 3508);
     			attr_dev(button0, "id", "settings");
-    			attr_dev(button0, "class", "svelte-zpmfjg");
+    			attr_dev(button0, "class", "svelte-12te4a9");
     			add_location(button0, file, 130, 4, 3453);
     			attr_dev(header, "id", "topbar");
-    			attr_dev(header, "class", "svelte-zpmfjg");
+    			attr_dev(header, "class", "svelte-12te4a9");
     			add_location(header, file, 125, 2, 3308);
-    			attr_dev(input0, "class", "input svelte-zpmfjg");
+    			attr_dev(input0, "class", "input svelte-12te4a9");
     			attr_dev(input0, "placeholder", /*placeholder*/ ctx[6]);
     			add_location(input0, file, 143, 6, 3826);
     			attr_dev(p, "id", "output");
-    			attr_dev(p, "class", "svelte-zpmfjg");
+    			attr_dev(p, "class", "svelte-12te4a9");
     			add_location(p, file, 145, 4, 3924);
     			attr_dev(div, "id", "content");
-    			attr_dev(div, "class", "svelte-zpmfjg");
+    			attr_dev(div, "class", "svelte-12te4a9");
     			add_location(div, file, 139, 2, 3659);
     			attr_dev(img1, "id", "plen");
     			if (img1.src !== (img1_src_value = "./Plen.svg")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Plen");
-    			attr_dev(img1, "class", "select-disable svelte-zpmfjg");
+    			attr_dev(img1, "class", "select-disable svelte-12te4a9");
     			add_location(img1, file, 151, 2, 4054);
     			if (img2.src !== (img2_src_value = "./Copy.svg")) attr_dev(img2, "src", img2_src_value);
     			attr_dev(img2, "alt", "Copy");
-    			attr_dev(img2, "class", "svelte-zpmfjg");
+    			attr_dev(img2, "class", "svelte-12te4a9");
     			add_location(img2, file, 152, 49, 4172);
     			attr_dev(button1, "id", "copy-button");
-    			attr_dev(button1, "class", "svelte-zpmfjg");
+    			attr_dev(button1, "class", "svelte-12te4a9");
     			add_location(button1, file, 152, 2, 4125);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "id", "copy-area");
-    			attr_dev(input1, "class", "ssshhhh-Im-for-copying svelte-zpmfjg");
+    			attr_dev(input1, "class", "ssshhhh-Im-for-copying svelte-12te4a9");
     			input1.value = /*convertedText*/ ctx[7];
     			input1.readOnly = true;
     			add_location(input1, file, 153, 2, 4217);
-    			attr_dev(main, "class", "svelte-zpmfjg");
+    			attr_dev(main, "class", "svelte-12te4a9");
     			add_location(main, file, 124, 0, 3299);
     		},
     		l: function claim(nodes) {
@@ -1625,7 +1659,9 @@
     			if (if_block1) if_block1.m(target, anchor);
     			insert_dev(target, t13, anchor);
     			if_block2.m(target, anchor);
-    			insert_dev(target, if_block2_anchor, anchor);
+    			insert_dev(target, t14, anchor);
+    			if (if_block3) if_block3.m(target, anchor);
+    			insert_dev(target, if_block3_anchor, anchor);
     			current = true;
 
     			if (!mounted) {
@@ -1688,7 +1724,7 @@
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_2(ctx);
+    					if_block0 = create_if_block_3(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(t12.parentNode, t12);
@@ -1709,7 +1745,7 @@
     						transition_in(if_block1, 1);
     					}
     				} else {
-    					if_block1 = create_if_block_1(ctx);
+    					if_block1 = create_if_block_2(ctx);
     					if_block1.c();
     					transition_in(if_block1, 1);
     					if_block1.m(t13.parentNode, t13);
@@ -1730,8 +1766,19 @@
 
     				if (if_block2) {
     					if_block2.c();
-    					if_block2.m(if_block2_anchor.parentNode, if_block2_anchor);
+    					if_block2.m(t14.parentNode, t14);
     				}
+    			}
+
+    			if (/*settingsMenuState*/ ctx[2]) {
+    				if (if_block3) ; else {
+    					if_block3 = create_if_block(ctx);
+    					if_block3.c();
+    					if_block3.m(if_block3_anchor.parentNode, if_block3_anchor);
+    				}
+    			} else if (if_block3) {
+    				if_block3.d(1);
+    				if_block3 = null;
     			}
     		},
     		i: function intro(local) {
@@ -1765,7 +1812,9 @@
     			if (if_block1) if_block1.d(detaching);
     			if (detaching) detach_dev(t13);
     			if_block2.d(detaching);
-    			if (detaching) detach_dev(if_block2_anchor);
+    			if (detaching) detach_dev(t14);
+    			if (if_block3) if_block3.d(detaching);
+    			if (detaching) detach_dev(if_block3_anchor);
     			mounted = false;
     			run_all(dispose);
     		}
