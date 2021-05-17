@@ -184,6 +184,14 @@
     function set_current_component(component) {
         current_component = component;
     }
+    function get_current_component() {
+        if (!current_component)
+            throw new Error('Function called outside component initialization');
+        return current_component;
+    }
+    function onMount(fn) {
+        get_current_component().$$.on_mount.push(fn);
+    }
     // TODO figure out if we still want to support
     // shorthand events, or if we want to implement
     // a real bubbling mechanism
@@ -1022,7 +1030,7 @@
     	return child_ctx;
     }
 
-    // (147:6) {#each convertedText as char}
+    // (156:6) {#each convertedText as char}
     function create_each_block(ctx) {
     	let span;
     	let t_value = /*char*/ ctx[19] + "";
@@ -1035,7 +1043,7 @@
     			span = element("span");
     			t = text(t_value);
     			attr_dev(span, "class", "svelte-12te4a9");
-    			add_location(span, file, 147, 8, 3984);
+    			add_location(span, file, 156, 8, 4175);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -1070,14 +1078,14 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(147:6) {#each convertedText as char}",
+    		source: "(156:6) {#each convertedText as char}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (157:0) {#if settingsMenuState == true}
+    // (166:0) {#if settingsMenuState == true}
     function create_if_block_3(ctx) {
     	let div2;
     	let div0;
@@ -1125,23 +1133,23 @@
     			if (if_block) if_block.c();
     			attr_dev(label0, "class", "settings-label svelte-12te4a9");
     			attr_dev(label0, "for", "recurs-lvl-set");
-    			add_location(label0, file, 163, 6, 4512);
+    			add_location(label0, file, 172, 6, 4703);
     			attr_dev(input_1, "type", "range");
     			attr_dev(input_1, "min", "1");
     			attr_dev(input_1, "max", "3");
     			attr_dev(input_1, "id", "recurs-lvl-set");
     			attr_dev(input_1, "class", "svelte-12te4a9");
-    			add_location(input_1, file, 166, 6, 4627);
+    			add_location(input_1, file, 175, 6, 4818);
     			attr_dev(div0, "class", "settings-options svelte-12te4a9");
-    			add_location(div0, file, 162, 4, 4475);
+    			add_location(div0, file, 171, 4, 4666);
     			attr_dev(label1, "class", "settings-label svelte-12te4a9");
-    			add_location(label1, file, 176, 6, 4867);
+    			add_location(label1, file, 185, 6, 5058);
     			attr_dev(div1, "class", "settings-options svelte-12te4a9");
     			set_style(div1, "margin-top", "2rem");
-    			add_location(div1, file, 175, 4, 4803);
+    			add_location(div1, file, 184, 4, 4994);
     			attr_dev(div2, "id", "settings-menu");
     			attr_dev(div2, "class", "svelte-12te4a9");
-    			add_location(div2, file, 157, 2, 4358);
+    			add_location(div2, file, 166, 2, 4549);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -1239,14 +1247,14 @@
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(157:0) {#if settingsMenuState == true}",
+    		source: "(166:0) {#if settingsMenuState == true}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (181:6) {#if reverseMode}
+    // (190:6) {#if reverseMode}
     function create_if_block_4(ctx) {
     	let label;
     	let label_intro;
@@ -1269,7 +1277,7 @@
     			t1 = space();
     			create_component(checkbox.$$.fragment);
     			attr_dev(label, "class", "settings-label svelte-12te4a9");
-    			add_location(label, file, 181, 6, 5033);
+    			add_location(label, file, 190, 6, 5224);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -1312,14 +1320,14 @@
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(181:6) {#if reverseMode}",
+    		source: "(190:6) {#if reverseMode}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (191:0) {#if showCopyIndicator}
+    // (200:0) {#if showCopyIndicator}
     function create_if_block_2(ctx) {
     	let div;
     	let p;
@@ -1333,10 +1341,10 @@
     			p = element("p");
     			p.textContent = "Copied!";
     			attr_dev(p, "class", "svelte-12te4a9");
-    			add_location(p, file, 192, 4, 5431);
+    			add_location(p, file, 201, 4, 5622);
     			attr_dev(div, "id", "copy-indicator");
     			attr_dev(div, "class", "svelte-12te4a9");
-    			add_location(div, file, 191, 2, 5332);
+    			add_location(div, file, 200, 2, 5523);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1369,14 +1377,14 @@
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(191:0) {#if showCopyIndicator}",
+    		source: "(200:0) {#if showCopyIndicator}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (203:0) {:else}
+    // (212:0) {:else}
     function create_else_block(ctx) {
     	let style;
 
@@ -1385,7 +1393,7 @@
     			style = element("style");
     			style.textContent = "#output {\n      word-break: break-word;\n    }";
     			attr_dev(style, "class", "svelte-12te4a9");
-    			add_location(style, file, 203, 2, 5560);
+    			add_location(style, file, 212, 2, 5751);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -1399,14 +1407,14 @@
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(203:0) {:else}",
+    		source: "(212:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (197:0) {#if reverseMode}
+    // (206:0) {#if reverseMode}
     function create_if_block_1(ctx) {
     	let style;
 
@@ -1415,7 +1423,7 @@
     			style = element("style");
     			style.textContent = "#output {\n      word-break: break-all;\n    }";
     			attr_dev(style, "class", "svelte-12te4a9");
-    			add_location(style, file, 197, 2, 5482);
+    			add_location(style, file, 206, 2, 5673);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -1429,14 +1437,14 @@
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(197:0) {#if reverseMode}",
+    		source: "(206:0) {#if reverseMode}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (211:0) {#if settingsMenuState}
+    // (220:0) {#if settingsMenuState}
     function create_if_block(ctx) {
     	let style;
 
@@ -1445,7 +1453,7 @@
     			style = element("style");
     			style.textContent = "#content, #plen, #copy-button, #copy-indicator{\n      pointer-events: none;\n    }\n    body {\n      overflow: hidden;\n    }";
     			attr_dev(style, "class", "svelte-12te4a9");
-    			add_location(style, file, 211, 2, 5662);
+    			add_location(style, file, 220, 2, 5853);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -1459,7 +1467,7 @@
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(211:0) {#if settingsMenuState}",
+    		source: "(220:0) {#if settingsMenuState}",
     		ctx
     	});
 
@@ -1569,56 +1577,56 @@
     			if_block3_anchor = empty();
     			attr_dev(span0, "id", "e1");
     			attr_dev(span0, "class", "svelte-12te4a9");
-    			add_location(span0, file, 127, 6, 3355);
+    			add_location(span0, file, 136, 6, 3546);
     			attr_dev(span1, "id", "e2");
     			attr_dev(span1, "class", "svelte-12te4a9");
-    			add_location(span1, file, 127, 32, 3381);
+    			add_location(span1, file, 136, 32, 3572);
     			attr_dev(span2, "id", "e3");
     			attr_dev(span2, "class", "svelte-12te4a9");
-    			add_location(span2, file, 128, 6, 3413);
+    			add_location(span2, file, 137, 6, 3604);
     			attr_dev(h1, "id", "title");
     			attr_dev(h1, "class", "svelte-12te4a9");
-    			add_location(h1, file, 126, 4, 3333);
+    			add_location(h1, file, 135, 4, 3524);
     			if (img0.src !== (img0_src_value = "./Settings.svg")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "Settings");
     			attr_dev(img0, "id", "settings-svg");
     			attr_dev(img0, "class", "select-disable svelte-12te4a9");
-    			add_location(img0, file, 131, 7, 3508);
+    			add_location(img0, file, 140, 7, 3699);
     			attr_dev(button0, "id", "settings");
     			attr_dev(button0, "class", "svelte-12te4a9");
-    			add_location(button0, file, 130, 4, 3453);
+    			add_location(button0, file, 139, 4, 3644);
     			attr_dev(header, "id", "topbar");
     			attr_dev(header, "class", "svelte-12te4a9");
-    			add_location(header, file, 125, 2, 3308);
+    			add_location(header, file, 134, 2, 3499);
     			attr_dev(input0, "class", "input svelte-12te4a9");
     			attr_dev(input0, "placeholder", /*placeholder*/ ctx[6]);
-    			add_location(input0, file, 143, 6, 3826);
+    			add_location(input0, file, 152, 6, 4017);
     			attr_dev(p, "id", "output");
     			attr_dev(p, "class", "svelte-12te4a9");
-    			add_location(p, file, 145, 4, 3924);
+    			add_location(p, file, 154, 4, 4115);
     			attr_dev(div, "id", "content");
     			attr_dev(div, "class", "svelte-12te4a9");
-    			add_location(div, file, 139, 2, 3659);
+    			add_location(div, file, 148, 2, 3850);
     			attr_dev(img1, "id", "plen");
     			if (img1.src !== (img1_src_value = "./Plen.svg")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Plen");
     			attr_dev(img1, "class", "select-disable svelte-12te4a9");
-    			add_location(img1, file, 151, 2, 4054);
+    			add_location(img1, file, 160, 2, 4245);
     			if (img2.src !== (img2_src_value = "./Copy.svg")) attr_dev(img2, "src", img2_src_value);
     			attr_dev(img2, "alt", "Copy");
     			attr_dev(img2, "class", "svelte-12te4a9");
-    			add_location(img2, file, 152, 49, 4172);
+    			add_location(img2, file, 161, 49, 4363);
     			attr_dev(button1, "id", "copy-button");
     			attr_dev(button1, "class", "svelte-12te4a9");
-    			add_location(button1, file, 152, 2, 4125);
+    			add_location(button1, file, 161, 2, 4316);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "id", "copy-area");
     			attr_dev(input1, "class", "ssshhhh-Im-for-copying svelte-12te4a9");
     			input1.value = /*convertedText*/ ctx[7];
     			input1.readOnly = true;
-    			add_location(input1, file, 153, 2, 4217);
+    			add_location(input1, file, 162, 2, 4408);
     			attr_dev(main, "class", "svelte-12te4a9");
-    			add_location(main, file, 124, 0, 3299);
+    			add_location(main, file, 133, 0, 3490);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1858,6 +1866,14 @@
     	let placeholder = placeholders[Math.floor(Math.random() * placeholders.length)];
     	let convertedText = convertText(placeholder, recursionLevel);
 
+    	onMount(() => {
+    		document.addEventListener("keyup", e => {
+    			if (e.ctrlKey && e.keyCode === 67) {
+    				copyOutput();
+    			}
+    		});
+    	});
+
     	function onInput() {
     		if (reverseMode) {
     			if (input) {
@@ -1974,6 +1990,7 @@
     		convertToAv,
     		fade,
     		fly,
+    		onMount,
     		Checkbox,
     		convertFromAv,
     		input,

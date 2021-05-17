@@ -2,6 +2,7 @@
   export let convertToAv;
 
   import { fade, fly } from "svelte/transition";
+  import { onMount } from 'svelte';
   import Checkbox from "./Checkbox.svelte";
 
   import convertFromAv from './convertFromAv.js'
@@ -33,6 +34,14 @@
     placeholders[Math.floor(Math.random() * placeholders.length)];
 
   let convertedText = convertText(placeholder, recursionLevel);
+
+  onMount(() => {
+    document.addEventListener('keyup', (e) => {
+      if (e.ctrlKey && e.keyCode === 67) {
+        copyOutput();
+      }
+    });
+  });
 
   function onInput() {
     if (reverseMode) {
@@ -111,7 +120,7 @@
   }
 
   function copyOutput() {
-    const inputElement = document.querySelector("#copy-area")
+    const inputElement = document.querySelector("#copy-area");
 	  inputElement.select();
 	  inputElement.setSelectionRange(0, 99999); /* For mobile devices */
 	  document.execCommand("copy");
