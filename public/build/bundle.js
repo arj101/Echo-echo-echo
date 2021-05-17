@@ -969,7 +969,7 @@
         convertedText += char + " ";
         currIdx += avLength;
       }
-      if (recursionLevel > 0) {
+      if (recursionLevel > 1) {
         recursionLevel--;
         return convertFromAv(convertedText, recursionLevel);
       }
