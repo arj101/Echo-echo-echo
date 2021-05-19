@@ -9,6 +9,8 @@ body {
 	margin: 0;
 	padding: 8px;
 	box-sizing: border-box;
+	background: linear-gradient(180deg, #FFFFFF 18.08%, #E4DBF2 81.43%);
+	overflow-x: hidden;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 

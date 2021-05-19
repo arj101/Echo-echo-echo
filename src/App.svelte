@@ -158,7 +158,6 @@
       {/each}
     </p>
   </div>
-  <img id="plen" src="./Plen.svg" alt="Plen" class="select-disable" />
   <button id="copy-button" on:click={copyOutput}><img src="./Copy.svg" alt="Copy"></button>
   <input type="text" id="copy-area" class="ssshhhh-Im-for-copying" value={convertedText} readonly/>
 </main>
@@ -167,7 +166,7 @@
   <div
     id="settings-menu"
     in:fly={{ y: -300, duration: 400 }}
-    out:fly={{ y: -300, duration: 400 }}
+    out:fly={{ y: -300, duration: 700 }}
   >
     <div class="settings-options">
       <label class="settings-label" for="recurs-lvl-set"
@@ -250,15 +249,16 @@
     height: 100%;
   }
   #topbar {
-    background-color: hsla(302, 23%, 59%, 1);
+    background-color: hsla(263, 82%, 69%, 1);
     width: 100%;
     height: fit-content;
     text-transform: uppercase;
-    box-shadow: 0px 2px 4px rgba(68, 45, 67, 0.25);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
+    z-index: 2;
   }
   #title {
     font-family: "Noto Sans JP", sans-serif;
@@ -266,22 +266,23 @@
     margin: 0.5rem;
     font-size: 1.5rem;
     transition: margin 300ms ease;
+    color: white;
     -moz-user-select: none;
     -webkit-user-select: none;
   }
   #e1 {
-    color: white;
+    opacity: 1;
   }
   #e2 {
-    color: hsla(302, 22%, 88%, 1);
+    opacity: 0.6;
   }
   #e3 {
-    color: hsla(302, 23%, 75%, 1);
+    opacity: 0.3;
   }
 
   .input {
     margin-top: 4rem;
-    background-color: hsla(302, 22%, 96%, 1);
+    background-color: hsla(264, 81%, 92%, 1);
     border: none;
     border-radius: 0.2rem;
 
@@ -289,7 +290,7 @@
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 400;
     font-size: 1rem;
-    color: hsla(302, 21%, 33%, 1);
+    color: white;
 
     margin-inline: 0;
     margin-left: 1rem;
@@ -305,9 +306,9 @@
 
   #output {
     margin-top: 3rem;
-    color: hsla(302, 20%, 22%, 1);
+    color: hsla(0, 0%, 17%, 1);
     font-family: "Noto Sans JP", sans-serif;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 1rem;
     margin-left: 1rem;
     z-index: 1;
@@ -318,11 +319,12 @@
   }
 
   ::selection {
-    background-color: hsla(302, 20%, 22%, 0.25);
+    background-color:  hsla(264, 81%, 92%, 1);
   }
 
   ::placeholder {
-    color: hsla(302, 21%, 33%, 0.75);
+    color: white;
+    opacity: 0.7;
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 400;
   }
@@ -338,20 +340,11 @@
 
   .input:focus {
     outline: none;
-    background-color: hsla(302, 22%, 90%, 1);
+    background-color: hsla(263, 80%, 83%, 1);
   }
 
-  #plen {
-    position: fixed;
-    top: 35vh;
-    width: 25vw;
-    height: auto;
-    right: 5vw;
-    z-index: 0;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    transition: all 300ms ease;
-    opacity: 1;
+  .input:not(:placeholder-shown) {
+    background-color: hsla(263, 80%, 83%, 1);
   }
 
   #settings {
@@ -363,7 +356,7 @@
     display: grid;
     place-items: center;
     border: none;
-    background-color: hsla(302, 23%, 75%, 0);
+    background-color:  hsla(263, 82%, 75%, 0);
     transition: all 500ms ease;
     cursor: pointer;
     z-index: 3;
@@ -383,15 +376,15 @@
   }
 
   #settings:focus {
-    background-color: hsla(302, 23%, 75%, 0.2);
+    background-color: hsla(263, 82%, 75%, 0.2);
   }
 
   #settings:hover {
-    background-color: hsla(302, 23%, 75%, 0.4);
+    background-color: hsla(263, 82%, 75%, 0.4);
   }
 
   #settings:active {
-    background-color: hsla(302, 23%, 75%, 0.8);
+    background-color: hsla(263, 82%, 75%, 0.8);
   }
 
   #settings-menu {
@@ -400,11 +393,12 @@
     top: 5rem;
     width: 40vw;
     height: fit-content;
-    background-color: hsla(302, 23%, 59%, 1);
+    background-color: hsla(263, 82%, 69%, 0.6);
+    backdrop-filter: blur(5px);
     z-index: 2;
     border-radius: 0.5rem;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.2) 0px 30px 60px -30px;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -531,6 +525,8 @@
     display: grid;
     place-items: center;
     box-shadow: rgba(50, 50, 93, 0.35) 0px 10px 15px -4px, rgba(0, 0, 0, 0.4) 0px 6px 9px -6px;
+    z-index: 2;
+    height: 2rem;
   }
 
   #copy-indicator p {
@@ -552,13 +548,6 @@
       width: 93vw;
       margin-inline: auto;
       font-size: 1.5rem;
-    }
-    #plen {
-      top: 50vh;
-      width: 85vw;
-      height: auto;
-      right: 7.5vw;
-      opacity: 0.3;
     }
     #output {
       width: 93vw;
