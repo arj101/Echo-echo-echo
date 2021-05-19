@@ -363,7 +363,7 @@
     width: 100%;
     height: fit-content;
     text-transform: uppercase;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -514,7 +514,7 @@
     justify-content: start;
     flex-direction: column;
     padding: 2rem;
-    cursor: url(../cursor1.png) 13 13, auto;
+    cursor: url(../cursor1.png) 10 10, auto;
   }
 
   .settings-options {
@@ -539,7 +539,7 @@
     width: 100%;
     opacity: 0.5;
     transition: opacity 500ms ease;
-    cursor: url(../cursor1.png) 13 13, pointer;
+    cursor: url(../cursor1.png) 10 10, pointer;
   }
 
   #recurs-lvl-set::-webkit-slider-thumb {
@@ -565,7 +565,7 @@
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 400;
     color: white;
-    cursor: url(../cursor1.png) 13 13, pointer;
+    cursor: url(../cursor1.png) 10 10, pointer;
   }
 
   #recurs-lvl-set:hover {
@@ -573,7 +573,7 @@
   }
 
   #recurs-lvl-set:active {
-    cursor: url(../cursor2.png) 15 10, pointer;
+    cursor: url(../cursor2.png) 5 5, pointer;
   }
 
   #copy-button {

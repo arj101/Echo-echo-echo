@@ -801,7 +801,7 @@
     			img = element("img");
     			if (img.src !== (img_src_value = "./Chkbox_unchecked.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "checkbox_unchecked");
-    			attr_dev(img, "class", "svelte-1pdq4b9");
+    			attr_dev(img, "class", "svelte-1rl214m");
     			add_location(img, file$1, 13, 6, 245);
     		},
     		m: function mount(target, anchor) {
@@ -833,7 +833,7 @@
     			img = element("img");
     			if (img.src !== (img_src_value = "./Chkbox_checked.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "checkbox_checked");
-    			attr_dev(img, "class", "svelte-1pdq4b9");
+    			attr_dev(img, "class", "svelte-1rl214m");
     			add_location(img, file$1, 10, 6, 163);
     		},
     		m: function mount(target, anchor) {
@@ -872,7 +872,7 @@
     		c: function create() {
     			button = element("button");
     			if_block.c();
-    			attr_dev(button, "class", "svelte-1pdq4b9");
+    			attr_dev(button, "class", "svelte-1rl214m");
     			add_location(button, file$1, 8, 0, 102);
     		},
     		l: function claim(nodes) {
@@ -1050,7 +1050,7 @@
     			meta = element("meta");
     			attr_dev(meta, "name", "theme-color");
     			attr_dev(meta, "content", "white");
-    			attr_dev(meta, "class", "svelte-1pm27tr");
+    			attr_dev(meta, "class", "svelte-15k7hoq");
     			add_location(meta, file, 140, 4, 3682);
     		},
     		m: function mount(target, anchor) {
@@ -1081,7 +1081,7 @@
     			meta = element("meta");
     			attr_dev(meta, "name", "theme-color");
     			attr_dev(meta, "content", "hsla(263, 53%, 58%, 1)");
-    			attr_dev(meta, "class", "svelte-1pm27tr");
+    			attr_dev(meta, "class", "svelte-15k7hoq");
     			add_location(meta, file, 138, 4, 3607);
     		},
     		m: function mount(target, anchor) {
@@ -1112,7 +1112,7 @@
     			style = element("style");
     			style.textContent = "main {\n      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;\n    }";
     			attr_dev(style, "media", "screen");
-    			attr_dev(style, "class", "svelte-1pm27tr");
+    			attr_dev(style, "class", "svelte-15k7hoq");
     			add_location(style, file, 145, 2, 3772);
     		},
     		m: function mount(target, anchor) {
@@ -1146,7 +1146,7 @@
     		c: function create() {
     			span = element("span");
     			t = text(t_value);
-    			attr_dev(span, "class", "svelte-1pm27tr");
+    			attr_dev(span, "class", "svelte-15k7hoq");
     			add_location(span, file, 175, 8, 4602);
     		},
     		m: function mount(target, anchor) {
@@ -1235,24 +1235,24 @@
     			create_component(checkbox.$$.fragment);
     			t6 = space();
     			if (if_block) if_block.c();
-    			attr_dev(label0, "class", "settings-label svelte-1pm27tr");
+    			attr_dev(label0, "class", "settings-label svelte-15k7hoq");
     			attr_dev(label0, "for", "recurs-lvl-set");
     			add_location(label0, file, 201, 6, 5634);
     			attr_dev(input_1, "type", "range");
     			attr_dev(input_1, "min", "1");
     			attr_dev(input_1, "max", "3");
     			attr_dev(input_1, "id", "recurs-lvl-set");
-    			attr_dev(input_1, "class", "svelte-1pm27tr");
+    			attr_dev(input_1, "class", "svelte-15k7hoq");
     			add_location(input_1, file, 204, 6, 5749);
-    			attr_dev(div0, "class", "settings-options svelte-1pm27tr");
+    			attr_dev(div0, "class", "settings-options svelte-15k7hoq");
     			add_location(div0, file, 200, 4, 5597);
-    			attr_dev(label1, "class", "settings-label svelte-1pm27tr");
+    			attr_dev(label1, "class", "settings-label svelte-15k7hoq");
     			add_location(label1, file, 214, 6, 5989);
-    			attr_dev(div1, "class", "settings-options svelte-1pm27tr");
+    			attr_dev(div1, "class", "settings-options svelte-15k7hoq");
     			set_style(div1, "margin-top", "2rem");
     			add_location(div1, file, 213, 4, 5925);
     			attr_dev(div2, "id", "settings-menu");
-    			attr_dev(div2, "class", "svelte-1pm27tr");
+    			attr_dev(div2, "class", "svelte-15k7hoq");
     			add_location(div2, file, 195, 2, 5480);
     		},
     		m: function mount(target, anchor) {
@@ -1380,7 +1380,7 @@
     			label.textContent = "Add space between characters";
     			t1 = space();
     			create_component(checkbox.$$.fragment);
-    			attr_dev(label, "class", "settings-label svelte-1pm27tr");
+    			attr_dev(label, "class", "settings-label svelte-15k7hoq");
     			add_location(label, file, 219, 6, 6155);
     		},
     		m: function mount(target, anchor) {
@@ -1444,10 +1444,10 @@
     			div = element("div");
     			p = element("p");
     			p.textContent = "Copied!";
-    			attr_dev(p, "class", "svelte-1pm27tr");
+    			attr_dev(p, "class", "svelte-15k7hoq");
     			add_location(p, file, 230, 4, 6553);
     			attr_dev(div, "id", "copy-indicator");
-    			attr_dev(div, "class", "svelte-1pm27tr");
+    			attr_dev(div, "class", "svelte-15k7hoq");
     			add_location(div, file, 229, 2, 6454);
     		},
     		m: function mount(target, anchor) {
@@ -1496,7 +1496,7 @@
     		c: function create() {
     			style = element("style");
     			style.textContent = "#output {\n      word-break: break-word;\n    }";
-    			attr_dev(style, "class", "svelte-1pm27tr");
+    			attr_dev(style, "class", "svelte-15k7hoq");
     			add_location(style, file, 241, 2, 6682);
     		},
     		m: function mount(target, anchor) {
@@ -1526,7 +1526,7 @@
     		c: function create() {
     			style = element("style");
     			style.textContent = "#output {\n      word-break: break-all;\n    }";
-    			attr_dev(style, "class", "svelte-1pm27tr");
+    			attr_dev(style, "class", "svelte-15k7hoq");
     			add_location(style, file, 235, 2, 6604);
     		},
     		m: function mount(target, anchor) {
@@ -1556,7 +1556,7 @@
     		c: function create() {
     			style = element("style");
     			style.textContent = "#content, #plen, #copy-button, #copy-indicator{\n      pointer-events: none;\n    }\n    body {\n      overflow: hidden;\n    }";
-    			attr_dev(style, "class", "svelte-1pm27tr");
+    			attr_dev(style, "class", "svelte-15k7hoq");
     			add_location(style, file, 249, 2, 6784);
     		},
     		m: function mount(target, anchor) {
@@ -1706,60 +1706,60 @@
     			if (if_block5) if_block5.c();
     			if_block5_anchor = empty();
     			attr_dev(span0, "id", "e1");
-    			attr_dev(span0, "class", "svelte-1pm27tr");
+    			attr_dev(span0, "class", "svelte-15k7hoq");
     			add_location(span0, file, 155, 6, 3973);
     			attr_dev(span1, "id", "e2");
-    			attr_dev(span1, "class", "svelte-1pm27tr");
+    			attr_dev(span1, "class", "svelte-15k7hoq");
     			add_location(span1, file, 155, 32, 3999);
     			attr_dev(span2, "id", "e3");
-    			attr_dev(span2, "class", "svelte-1pm27tr");
+    			attr_dev(span2, "class", "svelte-15k7hoq");
     			add_location(span2, file, 156, 6, 4031);
     			attr_dev(h1, "id", "title");
-    			attr_dev(h1, "class", "svelte-1pm27tr");
+    			attr_dev(h1, "class", "svelte-15k7hoq");
     			add_location(h1, file, 154, 4, 3951);
     			if (img0.src !== (img0_src_value = "./Settings.svg")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "Settings");
     			attr_dev(img0, "id", "settings-svg");
-    			attr_dev(img0, "class", "select-disable svelte-1pm27tr");
+    			attr_dev(img0, "class", "select-disable svelte-15k7hoq");
     			add_location(img0, file, 159, 7, 4126);
     			attr_dev(button0, "id", "settings");
-    			attr_dev(button0, "class", "svelte-1pm27tr");
+    			attr_dev(button0, "class", "svelte-15k7hoq");
     			add_location(button0, file, 158, 4, 4071);
     			attr_dev(header, "id", "topbar");
-    			attr_dev(header, "class", "svelte-1pm27tr");
+    			attr_dev(header, "class", "svelte-15k7hoq");
     			add_location(header, file, 153, 2, 3926);
-    			attr_dev(input0, "class", "input svelte-1pm27tr");
+    			attr_dev(input0, "class", "input svelte-15k7hoq");
     			attr_dev(input0, "placeholder", /*placeholder*/ ctx[6]);
     			add_location(input0, file, 171, 6, 4444);
     			attr_dev(p, "id", "output");
-    			attr_dev(p, "class", "svelte-1pm27tr");
+    			attr_dev(p, "class", "svelte-15k7hoq");
     			add_location(p, file, 173, 4, 4542);
     			attr_dev(div, "id", "content");
-    			attr_dev(div, "class", "svelte-1pm27tr");
+    			attr_dev(div, "class", "svelte-15k7hoq");
     			add_location(div, file, 167, 2, 4277);
     			if (img1.src !== (img1_src_value = "./Copy.svg")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Copy");
-    			attr_dev(img1, "class", "svelte-1pm27tr");
+    			attr_dev(img1, "class", "svelte-15k7hoq");
     			add_location(img1, file, 179, 49, 4719);
     			attr_dev(button1, "id", "copy-button");
-    			attr_dev(button1, "class", "svelte-1pm27tr");
+    			attr_dev(button1, "class", "svelte-15k7hoq");
     			add_location(button1, file, 179, 2, 4672);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "id", "copy-area");
-    			attr_dev(input1, "class", "ssshhhh-Im-for-copying svelte-1pm27tr");
+    			attr_dev(input1, "class", "ssshhhh-Im-for-copying svelte-15k7hoq");
     			input1.value = /*convertedText*/ ctx[7];
     			input1.readOnly = true;
     			add_location(input1, file, 180, 2, 4764);
     			attr_dev(rect0, "width", "1152");
     			attr_dev(rect0, "height", "502");
     			attr_dev(rect0, "fill", "white");
-    			attr_dev(rect0, "class", "svelte-1pm27tr");
+    			attr_dev(rect0, "class", "svelte-15k7hoq");
     			add_location(rect0, file, 183, 2, 4969);
     			attr_dev(path, "id", "triangle");
     			attr_dev(path, "d", "M201.227 340.171L250.065 248.96L295.691 341.82L201.227 340.171Z");
     			attr_dev(path, "stroke", "#FFC1C1");
     			attr_dev(path, "stroke-width", "10");
-    			attr_dev(path, "class", "svelte-1pm27tr");
+    			attr_dev(path, "class", "svelte-15k7hoq");
     			add_location(path, file, 184, 2, 5018);
     			attr_dev(rect1, "id", "rect1");
     			attr_dev(rect1, "x", "703.869");
@@ -1768,7 +1768,7 @@
     			attr_dev(rect1, "height", "90");
     			attr_dev(rect1, "stroke", "#C1FFF4");
     			attr_dev(rect1, "stroke-width", "10");
-    			attr_dev(rect1, "class", "svelte-1pm27tr");
+    			attr_dev(rect1, "class", "svelte-15k7hoq");
     			add_location(rect1, file, 185, 2, 5145);
     			attr_dev(rect2, "id", "rect2");
     			attr_dev(rect2, "x", "930.437");
@@ -1777,7 +1777,7 @@
     			attr_dev(rect2, "height", "32");
     			attr_dev(rect2, "stroke", "#CEFFC1");
     			attr_dev(rect2, "stroke-width", "10");
-    			attr_dev(rect2, "class", "svelte-1pm27tr");
+    			attr_dev(rect2, "class", "svelte-15k7hoq");
     			add_location(rect2, file, 186, 2, 5248);
     			attr_dev(circle, "id", "circle");
     			attr_dev(circle, "cx", "1007");
@@ -1785,16 +1785,16 @@
     			attr_dev(circle, "r", "15");
     			attr_dev(circle, "stroke", "#FFF9C1");
     			attr_dev(circle, "stroke-width", "10");
-    			attr_dev(circle, "class", "svelte-1pm27tr");
+    			attr_dev(circle, "class", "svelte-15k7hoq");
     			add_location(circle, file, 187, 2, 5351);
     			attr_dev(svg, "width", "1152");
     			attr_dev(svg, "height", "502");
     			attr_dev(svg, "viewBox", "0 0 1152 502");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			attr_dev(svg, "class", "svelte-1pm27tr");
+    			attr_dev(svg, "class", "svelte-15k7hoq");
     			add_location(svg, file, 182, 2, 4865);
-    			attr_dev(main, "class", "svelte-1pm27tr");
+    			attr_dev(main, "class", "svelte-15k7hoq");
     			add_location(main, file, 152, 0, 3917);
     		},
     		l: function claim(nodes) {
