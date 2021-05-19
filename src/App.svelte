@@ -162,6 +162,9 @@
   <input type="text" id="copy-area" class="ssshhhh-Im-for-copying" value={convertedText} readonly/>
 </main>
 
+<div id="loading-bg">
+</div>
+
 {#if settingsMenuState == true}
   <div
     id="settings-menu"
@@ -538,6 +541,31 @@
     font-size: 1rem;
     color: white;
   }
+
+  #loading-bg {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    border: none;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    animation: loading-animation 2000ms cubic-bezier(0.35, 1.01, 0.53, 0.99);
+    z-index: 4;
+    background-color: hsla(263, 82%, 69%, 1);
+    transform: translateY(100%);
+  }
+
+  @keyframes loading-animation {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
+
 
   @media only screen and (max-width: 800px) {
     #title {
