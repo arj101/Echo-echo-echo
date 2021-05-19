@@ -35,7 +35,10 @@
 
   let convertedText = convertText(placeholder, recursionLevel);
 
+  let colourNavbar = false;
+
   onMount(() => {
+    setTimeout(() => colourNavbar = true, 1000);
     document.addEventListener('keyup', (e) => {
       if (e.ctrlKey && e.keyCode === 67) {
         copyOutput();
@@ -131,6 +134,12 @@
   }
 </script>
 
+<svelte:head>
+  {#if colourNavbar}
+    <meta name="theme-color" content="hsla(263, 53%, 58%, 1)" />
+  {/if}
+</svelte:head>
+
 <main>
   <header id="topbar">
     <h1 id="title">
@@ -160,10 +169,18 @@
   </div>
   <button id="copy-button" on:click={copyOutput}><img src="./Copy.svg" alt="Copy"></button>
   <input type="text" id="copy-area" class="ssshhhh-Im-for-copying" value={convertedText} readonly/>
+
+  <svg width="1152" height="502" viewBox="0 0 1152 502" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1152" height="502" fill="white"/>
+  <path id="triangle" d="M201.227 340.171L250.065 248.96L295.691 341.82L201.227 340.171Z" stroke="#FFC1C1" stroke-width="10"/>
+  <rect id="rect1" x="703.869" y="188.498" width="90" height="90" stroke="#C1FFF4" stroke-width="10"/>
+  <rect id="rect2" x="930.437" y="382.493" width="32" height="32" stroke="#CEFFC1" stroke-width="10"/>
+  <circle id="circle" cx="1007" cy="68" r="15" stroke="#FFF9C1" stroke-width="10"/>
+  </svg>
+
+
 </main>
 
-<div id="loading-bg">
-</div>
 
 {#if settingsMenuState == true}
   <div
@@ -229,7 +246,75 @@
     }
   </style>
 {/if}
+
 <style>
+  svg {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100vw;
+  }
+
+  #triangle {
+    animation: in-animation-1 500ms ease-in;
+  }
+
+  #rect1 {
+    animation: in-animation-2 1s ease-in;
+  }
+
+  #rect2 {
+    animation: in-animation-3 1.5s ease-in;
+  }
+
+  #circle {
+    animation: in-animation-2 1s ease-in;
+  }
+
+  @keyframes in-animation-1 {
+    from {
+      opacity: 0;
+      transform: translateY(20%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+
+    @keyframes in-animation-2 {
+      0% {
+        opacity: 0;
+        transform: translateY(-20%);
+      }
+      50% {
+        opacity: 0;
+        transform: translateY(-20%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+
+    @keyframes in-animation-3 {
+      0% {
+        opacity: 0;
+        transform: translateY(20%);
+      }
+      66% {
+        opacity: 0;
+        transform: translateY(20%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+
   .select-disable {
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -250,9 +335,23 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
+    animation: eee 1s cubic-bezier(0.15, 0.71, 0.31, 0.91);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  @keyframes eee {
+    from{
+      transform: scale(0.5);
+      opacity: 0;
+
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
   #topbar {
-    background-color: hsla(263, 82%, 69%, 1);
+    background-color: hsla(263, 53%, 58%, 1);
     width: 100%;
     height: fit-content;
     text-transform: uppercase;
@@ -587,6 +686,9 @@
     }
     #recurs-lvl-set {
       opacity: 1;
+    }
+    svg {
+      opacity: 0;
     }
   }
 
