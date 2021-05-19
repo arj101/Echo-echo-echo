@@ -40,7 +40,7 @@
   onMount(() => {
     setTimeout(() => colourNavbar = true, 1000);
     document.addEventListener('keyup', (e) => {
-      if (e.ctrlKey && e.keyCode === 67) {
+      if (e.ctrlKey && e.keyCode === 88) {
         copyOutput();
       }
     });
@@ -137,8 +137,18 @@
 <svelte:head>
   {#if colourNavbar}
     <meta name="theme-color" content="hsla(263, 53%, 58%, 1)" />
+  {:else}
+    <meta name="theme-color" content="white" />
   {/if}
 </svelte:head>
+
+{#if !colourNavbar}
+  <style media="screen">
+    main {
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+  </style>
+{/if}
 
 <main>
   <header id="topbar">
@@ -182,7 +192,7 @@
 </main>
 
 
-{#if settingsMenuState == true}
+{#if settingsMenuState}
   <div
     id="settings-menu"
     in:fly={{ y: -300, duration: 400 }}
@@ -249,7 +259,7 @@
 
 <style>
   svg {
-    position: absolute;
+    position: fixed;
     z-index: 0;
     top: 50%;
     left: 0;
@@ -258,7 +268,7 @@
   }
 
   #triangle {
-    animation: in-animation-1 500ms ease-in;
+    animation: in-animation-1 800ms ease-in;
   }
 
   #rect1 {
@@ -335,15 +345,13 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    animation: eee 1s cubic-bezier(0.15, 0.71, 0.31, 0.91);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    animation: scale-in 1s cubic-bezier(0.15, 0.71, 0.31, 0.91);
   }
 
-  @keyframes eee {
+  @keyframes scale-in {
     from{
       transform: scale(0.5);
       opacity: 0;
-
     }
     to {
       transform: scale(1);
@@ -639,30 +647,6 @@
     font-weight: 500;
     font-size: 1rem;
     color: white;
-  }
-
-  #loading-bg {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    border: none;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    animation: loading-animation 2000ms cubic-bezier(0.35, 1.01, 0.53, 0.99);
-    z-index: 4;
-    background-color: hsla(263, 82%, 69%, 1);
-    transform: translateY(100%);
-  }
-
-  @keyframes loading-animation {
-    from {
-      transform: translateY(0%);
-    }
-    to {
-      transform: translateY(100%);
-    }
   }
 
 

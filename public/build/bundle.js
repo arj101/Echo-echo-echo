@@ -1041,8 +1041,39 @@
     	return child_ctx;
     }
 
+    // (140:2) {:else}
+    function create_else_block_1(ctx) {
+    	let meta;
+
+    	const block = {
+    		c: function create() {
+    			meta = element("meta");
+    			attr_dev(meta, "name", "theme-color");
+    			attr_dev(meta, "content", "white");
+    			attr_dev(meta, "class", "svelte-1pm27tr");
+    			add_location(meta, file, 140, 4, 3682);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, meta, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(meta);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_1.name,
+    		type: "else",
+    		source: "(140:2) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     // (138:2) {#if colourNavbar}
-    function create_if_block_5(ctx) {
+    function create_if_block_6(ctx) {
     	let meta;
 
     	const block = {
@@ -1050,7 +1081,7 @@
     			meta = element("meta");
     			attr_dev(meta, "name", "theme-color");
     			attr_dev(meta, "content", "hsla(263, 53%, 58%, 1)");
-    			attr_dev(meta, "class", "svelte-u6caoo");
+    			attr_dev(meta, "class", "svelte-1pm27tr");
     			add_location(meta, file, 138, 4, 3607);
     		},
     		m: function mount(target, anchor) {
@@ -1063,7 +1094,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_5.name,
+    		id: create_if_block_6.name,
     		type: "if",
     		source: "(138:2) {#if colourNavbar}",
     		ctx
@@ -1072,7 +1103,38 @@
     	return block;
     }
 
-    // (165:6) {#each convertedText as char}
+    // (145:0) {#if !colourNavbar}
+    function create_if_block_5(ctx) {
+    	let style;
+
+    	const block = {
+    		c: function create() {
+    			style = element("style");
+    			style.textContent = "main {\n      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;\n    }";
+    			attr_dev(style, "media", "screen");
+    			attr_dev(style, "class", "svelte-1pm27tr");
+    			add_location(style, file, 145, 2, 3772);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, style, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(style);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_5.name,
+    		type: "if",
+    		source: "(145:0) {#if !colourNavbar}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (175:6) {#each convertedText as char}
     function create_each_block(ctx) {
     	let span;
     	let t_value = /*char*/ ctx[20] + "";
@@ -1084,8 +1146,8 @@
     		c: function create() {
     			span = element("span");
     			t = text(t_value);
-    			attr_dev(span, "class", "svelte-u6caoo");
-    			add_location(span, file, 165, 8, 4377);
+    			attr_dev(span, "class", "svelte-1pm27tr");
+    			add_location(span, file, 175, 8, 4602);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -1120,14 +1182,14 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(165:6) {#each convertedText as char}",
+    		source: "(175:6) {#each convertedText as char}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (185:0) {#if settingsMenuState == true}
+    // (195:0) {#if settingsMenuState}
     function create_if_block_3(ctx) {
     	let div2;
     	let div0;
@@ -1173,25 +1235,25 @@
     			create_component(checkbox.$$.fragment);
     			t6 = space();
     			if (if_block) if_block.c();
-    			attr_dev(label0, "class", "settings-label svelte-u6caoo");
+    			attr_dev(label0, "class", "settings-label svelte-1pm27tr");
     			attr_dev(label0, "for", "recurs-lvl-set");
-    			add_location(label0, file, 191, 6, 5417);
+    			add_location(label0, file, 201, 6, 5634);
     			attr_dev(input_1, "type", "range");
     			attr_dev(input_1, "min", "1");
     			attr_dev(input_1, "max", "3");
     			attr_dev(input_1, "id", "recurs-lvl-set");
-    			attr_dev(input_1, "class", "svelte-u6caoo");
-    			add_location(input_1, file, 194, 6, 5532);
-    			attr_dev(div0, "class", "settings-options svelte-u6caoo");
-    			add_location(div0, file, 190, 4, 5380);
-    			attr_dev(label1, "class", "settings-label svelte-u6caoo");
-    			add_location(label1, file, 204, 6, 5772);
-    			attr_dev(div1, "class", "settings-options svelte-u6caoo");
+    			attr_dev(input_1, "class", "svelte-1pm27tr");
+    			add_location(input_1, file, 204, 6, 5749);
+    			attr_dev(div0, "class", "settings-options svelte-1pm27tr");
+    			add_location(div0, file, 200, 4, 5597);
+    			attr_dev(label1, "class", "settings-label svelte-1pm27tr");
+    			add_location(label1, file, 214, 6, 5989);
+    			attr_dev(div1, "class", "settings-options svelte-1pm27tr");
     			set_style(div1, "margin-top", "2rem");
-    			add_location(div1, file, 203, 4, 5708);
+    			add_location(div1, file, 213, 4, 5925);
     			attr_dev(div2, "id", "settings-menu");
-    			attr_dev(div2, "class", "svelte-u6caoo");
-    			add_location(div2, file, 185, 2, 5263);
+    			attr_dev(div2, "class", "svelte-1pm27tr");
+    			add_location(div2, file, 195, 2, 5480);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -1289,14 +1351,14 @@
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(185:0) {#if settingsMenuState == true}",
+    		source: "(195:0) {#if settingsMenuState}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (209:6) {#if reverseMode}
+    // (219:6) {#if reverseMode}
     function create_if_block_4(ctx) {
     	let label;
     	let label_intro;
@@ -1318,8 +1380,8 @@
     			label.textContent = "Add space between characters";
     			t1 = space();
     			create_component(checkbox.$$.fragment);
-    			attr_dev(label, "class", "settings-label svelte-u6caoo");
-    			add_location(label, file, 209, 6, 5938);
+    			attr_dev(label, "class", "settings-label svelte-1pm27tr");
+    			add_location(label, file, 219, 6, 6155);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -1362,14 +1424,14 @@
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(209:6) {#if reverseMode}",
+    		source: "(219:6) {#if reverseMode}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (219:0) {#if showCopyIndicator}
+    // (229:0) {#if showCopyIndicator}
     function create_if_block_2(ctx) {
     	let div;
     	let p;
@@ -1382,11 +1444,11 @@
     			div = element("div");
     			p = element("p");
     			p.textContent = "Copied!";
-    			attr_dev(p, "class", "svelte-u6caoo");
-    			add_location(p, file, 220, 4, 6336);
+    			attr_dev(p, "class", "svelte-1pm27tr");
+    			add_location(p, file, 230, 4, 6553);
     			attr_dev(div, "id", "copy-indicator");
-    			attr_dev(div, "class", "svelte-u6caoo");
-    			add_location(div, file, 219, 2, 6237);
+    			attr_dev(div, "class", "svelte-1pm27tr");
+    			add_location(div, file, 229, 2, 6454);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1419,14 +1481,14 @@
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(219:0) {#if showCopyIndicator}",
+    		source: "(229:0) {#if showCopyIndicator}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (231:0) {:else}
+    // (241:0) {:else}
     function create_else_block(ctx) {
     	let style;
 
@@ -1434,8 +1496,8 @@
     		c: function create() {
     			style = element("style");
     			style.textContent = "#output {\n      word-break: break-word;\n    }";
-    			attr_dev(style, "class", "svelte-u6caoo");
-    			add_location(style, file, 231, 2, 6465);
+    			attr_dev(style, "class", "svelte-1pm27tr");
+    			add_location(style, file, 241, 2, 6682);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -1449,14 +1511,14 @@
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(231:0) {:else}",
+    		source: "(241:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (225:0) {#if reverseMode}
+    // (235:0) {#if reverseMode}
     function create_if_block_1(ctx) {
     	let style;
 
@@ -1464,8 +1526,8 @@
     		c: function create() {
     			style = element("style");
     			style.textContent = "#output {\n      word-break: break-all;\n    }";
-    			attr_dev(style, "class", "svelte-u6caoo");
-    			add_location(style, file, 225, 2, 6387);
+    			attr_dev(style, "class", "svelte-1pm27tr");
+    			add_location(style, file, 235, 2, 6604);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -1479,14 +1541,14 @@
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(225:0) {#if reverseMode}",
+    		source: "(235:0) {#if reverseMode}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (239:0) {#if settingsMenuState}
+    // (249:0) {#if settingsMenuState}
     function create_if_block(ctx) {
     	let style;
 
@@ -1494,8 +1556,8 @@
     		c: function create() {
     			style = element("style");
     			style.textContent = "#content, #plen, #copy-button, #copy-indicator{\n      pointer-events: none;\n    }\n    body {\n      overflow: hidden;\n    }";
-    			attr_dev(style, "class", "svelte-u6caoo");
-    			add_location(style, file, 239, 2, 6567);
+    			attr_dev(style, "class", "svelte-1pm27tr");
+    			add_location(style, file, 249, 2, 6784);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -1509,7 +1571,7 @@
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(239:0) {#if settingsMenuState}",
+    		source: "(249:0) {#if settingsMenuState}",
     		ctx
     	});
 
@@ -1519,45 +1581,54 @@
     function create_fragment(ctx) {
     	let if_block0_anchor;
     	let t0;
+    	let t1;
     	let main;
     	let header;
     	let h1;
     	let span0;
-    	let t2;
+    	let t3;
     	let span1;
-    	let t4;
+    	let t5;
     	let span2;
-    	let t6;
+    	let t7;
     	let button0;
     	let img0;
     	let img0_src_value;
-    	let t7;
+    	let t8;
     	let div;
     	let input0;
-    	let t8;
-    	let p;
     	let t9;
+    	let p;
+    	let t10;
     	let button1;
     	let img1;
     	let img1_src_value;
-    	let t10;
-    	let input1;
     	let t11;
+    	let input1;
+    	let t12;
     	let svg;
     	let rect0;
     	let path;
     	let rect1;
     	let rect2;
     	let circle;
-    	let t12;
     	let t13;
     	let t14;
     	let t15;
-    	let if_block4_anchor;
+    	let t16;
+    	let if_block5_anchor;
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block0 = /*colourNavbar*/ ctx[8] && create_if_block_5(ctx);
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*colourNavbar*/ ctx[8]) return create_if_block_6;
+    		return create_else_block_1;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block0 = current_block_type(ctx);
+    	let if_block1 = !/*colourNavbar*/ ctx[8] && create_if_block_5(ctx);
     	let each_value = /*convertedText*/ ctx[7];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -1570,124 +1641,126 @@
     		each_blocks[i] = null;
     	});
 
-    	let if_block1 = /*settingsMenuState*/ ctx[2] == true && create_if_block_3(ctx);
-    	let if_block2 = /*showCopyIndicator*/ ctx[5] && create_if_block_2(ctx);
+    	let if_block2 = /*settingsMenuState*/ ctx[2] && create_if_block_3(ctx);
+    	let if_block3 = /*showCopyIndicator*/ ctx[5] && create_if_block_2(ctx);
 
-    	function select_block_type(ctx, dirty) {
+    	function select_block_type_1(ctx, dirty) {
     		if (/*reverseMode*/ ctx[3]) return create_if_block_1;
     		return create_else_block;
     	}
 
-    	let current_block_type = select_block_type(ctx);
-    	let if_block3 = current_block_type(ctx);
-    	let if_block4 = /*settingsMenuState*/ ctx[2] && create_if_block(ctx);
+    	let current_block_type_1 = select_block_type_1(ctx);
+    	let if_block4 = current_block_type_1(ctx);
+    	let if_block5 = /*settingsMenuState*/ ctx[2] && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
-    			if (if_block0) if_block0.c();
+    			if_block0.c();
     			if_block0_anchor = empty();
     			t0 = space();
+    			if (if_block1) if_block1.c();
+    			t1 = space();
     			main = element("main");
     			header = element("header");
     			h1 = element("h1");
     			span0 = element("span");
     			span0.textContent = "Echo";
-    			t2 = space();
+    			t3 = space();
     			span1 = element("span");
     			span1.textContent = "Echo";
-    			t4 = space();
+    			t5 = space();
     			span2 = element("span");
     			span2.textContent = "Echo";
-    			t6 = space();
+    			t7 = space();
     			button0 = element("button");
     			img0 = element("img");
-    			t7 = space();
+    			t8 = space();
     			div = element("div");
     			input0 = element("input");
-    			t8 = space();
+    			t9 = space();
     			p = element("p");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t9 = space();
+    			t10 = space();
     			button1 = element("button");
     			img1 = element("img");
-    			t10 = space();
-    			input1 = element("input");
     			t11 = space();
+    			input1 = element("input");
+    			t12 = space();
     			svg = svg_element("svg");
     			rect0 = svg_element("rect");
     			path = svg_element("path");
     			rect1 = svg_element("rect");
     			rect2 = svg_element("rect");
     			circle = svg_element("circle");
-    			t12 = space();
-    			if (if_block1) if_block1.c();
     			t13 = space();
     			if (if_block2) if_block2.c();
     			t14 = space();
-    			if_block3.c();
+    			if (if_block3) if_block3.c();
     			t15 = space();
-    			if (if_block4) if_block4.c();
-    			if_block4_anchor = empty();
+    			if_block4.c();
+    			t16 = space();
+    			if (if_block5) if_block5.c();
+    			if_block5_anchor = empty();
     			attr_dev(span0, "id", "e1");
-    			attr_dev(span0, "class", "svelte-u6caoo");
-    			add_location(span0, file, 145, 6, 3748);
+    			attr_dev(span0, "class", "svelte-1pm27tr");
+    			add_location(span0, file, 155, 6, 3973);
     			attr_dev(span1, "id", "e2");
-    			attr_dev(span1, "class", "svelte-u6caoo");
-    			add_location(span1, file, 145, 32, 3774);
+    			attr_dev(span1, "class", "svelte-1pm27tr");
+    			add_location(span1, file, 155, 32, 3999);
     			attr_dev(span2, "id", "e3");
-    			attr_dev(span2, "class", "svelte-u6caoo");
-    			add_location(span2, file, 146, 6, 3806);
+    			attr_dev(span2, "class", "svelte-1pm27tr");
+    			add_location(span2, file, 156, 6, 4031);
     			attr_dev(h1, "id", "title");
-    			attr_dev(h1, "class", "svelte-u6caoo");
-    			add_location(h1, file, 144, 4, 3726);
+    			attr_dev(h1, "class", "svelte-1pm27tr");
+    			add_location(h1, file, 154, 4, 3951);
     			if (img0.src !== (img0_src_value = "./Settings.svg")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "Settings");
     			attr_dev(img0, "id", "settings-svg");
-    			attr_dev(img0, "class", "select-disable svelte-u6caoo");
-    			add_location(img0, file, 149, 7, 3901);
+    			attr_dev(img0, "class", "select-disable svelte-1pm27tr");
+    			add_location(img0, file, 159, 7, 4126);
     			attr_dev(button0, "id", "settings");
-    			attr_dev(button0, "class", "svelte-u6caoo");
-    			add_location(button0, file, 148, 4, 3846);
+    			attr_dev(button0, "class", "svelte-1pm27tr");
+    			add_location(button0, file, 158, 4, 4071);
     			attr_dev(header, "id", "topbar");
-    			attr_dev(header, "class", "svelte-u6caoo");
-    			add_location(header, file, 143, 2, 3701);
-    			attr_dev(input0, "class", "input svelte-u6caoo");
+    			attr_dev(header, "class", "svelte-1pm27tr");
+    			add_location(header, file, 153, 2, 3926);
+    			attr_dev(input0, "class", "input svelte-1pm27tr");
     			attr_dev(input0, "placeholder", /*placeholder*/ ctx[6]);
-    			add_location(input0, file, 161, 6, 4219);
+    			add_location(input0, file, 171, 6, 4444);
     			attr_dev(p, "id", "output");
-    			attr_dev(p, "class", "svelte-u6caoo");
-    			add_location(p, file, 163, 4, 4317);
+    			attr_dev(p, "class", "svelte-1pm27tr");
+    			add_location(p, file, 173, 4, 4542);
     			attr_dev(div, "id", "content");
-    			attr_dev(div, "class", "svelte-u6caoo");
-    			add_location(div, file, 157, 2, 4052);
+    			attr_dev(div, "class", "svelte-1pm27tr");
+    			add_location(div, file, 167, 2, 4277);
     			if (img1.src !== (img1_src_value = "./Copy.svg")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Copy");
-    			attr_dev(img1, "class", "svelte-u6caoo");
-    			add_location(img1, file, 169, 49, 4494);
+    			attr_dev(img1, "class", "svelte-1pm27tr");
+    			add_location(img1, file, 179, 49, 4719);
     			attr_dev(button1, "id", "copy-button");
-    			attr_dev(button1, "class", "svelte-u6caoo");
-    			add_location(button1, file, 169, 2, 4447);
+    			attr_dev(button1, "class", "svelte-1pm27tr");
+    			add_location(button1, file, 179, 2, 4672);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "id", "copy-area");
-    			attr_dev(input1, "class", "ssshhhh-Im-for-copying svelte-u6caoo");
+    			attr_dev(input1, "class", "ssshhhh-Im-for-copying svelte-1pm27tr");
     			input1.value = /*convertedText*/ ctx[7];
     			input1.readOnly = true;
-    			add_location(input1, file, 170, 2, 4539);
+    			add_location(input1, file, 180, 2, 4764);
     			attr_dev(rect0, "width", "1152");
     			attr_dev(rect0, "height", "502");
     			attr_dev(rect0, "fill", "white");
-    			attr_dev(rect0, "class", "svelte-u6caoo");
-    			add_location(rect0, file, 173, 2, 4744);
+    			attr_dev(rect0, "class", "svelte-1pm27tr");
+    			add_location(rect0, file, 183, 2, 4969);
     			attr_dev(path, "id", "triangle");
     			attr_dev(path, "d", "M201.227 340.171L250.065 248.96L295.691 341.82L201.227 340.171Z");
     			attr_dev(path, "stroke", "#FFC1C1");
     			attr_dev(path, "stroke-width", "10");
-    			attr_dev(path, "class", "svelte-u6caoo");
-    			add_location(path, file, 174, 2, 4793);
+    			attr_dev(path, "class", "svelte-1pm27tr");
+    			add_location(path, file, 184, 2, 5018);
     			attr_dev(rect1, "id", "rect1");
     			attr_dev(rect1, "x", "703.869");
     			attr_dev(rect1, "y", "188.498");
@@ -1695,8 +1768,8 @@
     			attr_dev(rect1, "height", "90");
     			attr_dev(rect1, "stroke", "#C1FFF4");
     			attr_dev(rect1, "stroke-width", "10");
-    			attr_dev(rect1, "class", "svelte-u6caoo");
-    			add_location(rect1, file, 175, 2, 4920);
+    			attr_dev(rect1, "class", "svelte-1pm27tr");
+    			add_location(rect1, file, 185, 2, 5145);
     			attr_dev(rect2, "id", "rect2");
     			attr_dev(rect2, "x", "930.437");
     			attr_dev(rect2, "y", "382.493");
@@ -1704,76 +1777,78 @@
     			attr_dev(rect2, "height", "32");
     			attr_dev(rect2, "stroke", "#CEFFC1");
     			attr_dev(rect2, "stroke-width", "10");
-    			attr_dev(rect2, "class", "svelte-u6caoo");
-    			add_location(rect2, file, 176, 2, 5023);
+    			attr_dev(rect2, "class", "svelte-1pm27tr");
+    			add_location(rect2, file, 186, 2, 5248);
     			attr_dev(circle, "id", "circle");
     			attr_dev(circle, "cx", "1007");
     			attr_dev(circle, "cy", "68");
     			attr_dev(circle, "r", "15");
     			attr_dev(circle, "stroke", "#FFF9C1");
     			attr_dev(circle, "stroke-width", "10");
-    			attr_dev(circle, "class", "svelte-u6caoo");
-    			add_location(circle, file, 177, 2, 5126);
+    			attr_dev(circle, "class", "svelte-1pm27tr");
+    			add_location(circle, file, 187, 2, 5351);
     			attr_dev(svg, "width", "1152");
     			attr_dev(svg, "height", "502");
     			attr_dev(svg, "viewBox", "0 0 1152 502");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			attr_dev(svg, "class", "svelte-u6caoo");
-    			add_location(svg, file, 172, 2, 4640);
-    			attr_dev(main, "class", "svelte-u6caoo");
-    			add_location(main, file, 142, 0, 3692);
+    			attr_dev(svg, "class", "svelte-1pm27tr");
+    			add_location(svg, file, 182, 2, 4865);
+    			attr_dev(main, "class", "svelte-1pm27tr");
+    			add_location(main, file, 152, 0, 3917);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			if (if_block0) if_block0.m(document_1.head, null);
+    			if_block0.m(document_1.head, null);
     			append_dev(document_1.head, if_block0_anchor);
     			insert_dev(target, t0, anchor);
+    			if (if_block1) if_block1.m(target, anchor);
+    			insert_dev(target, t1, anchor);
     			insert_dev(target, main, anchor);
     			append_dev(main, header);
     			append_dev(header, h1);
     			append_dev(h1, span0);
-    			append_dev(h1, t2);
+    			append_dev(h1, t3);
     			append_dev(h1, span1);
-    			append_dev(h1, t4);
+    			append_dev(h1, t5);
     			append_dev(h1, span2);
-    			append_dev(header, t6);
+    			append_dev(header, t7);
     			append_dev(header, button0);
     			append_dev(button0, img0);
-    			append_dev(main, t7);
+    			append_dev(main, t8);
     			append_dev(main, div);
     			append_dev(div, input0);
     			set_input_value(input0, /*input*/ ctx[0]);
-    			append_dev(div, t8);
+    			append_dev(div, t9);
     			append_dev(div, p);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(p, null);
     			}
 
-    			append_dev(main, t9);
+    			append_dev(main, t10);
     			append_dev(main, button1);
     			append_dev(button1, img1);
-    			append_dev(main, t10);
-    			append_dev(main, input1);
     			append_dev(main, t11);
+    			append_dev(main, input1);
+    			append_dev(main, t12);
     			append_dev(main, svg);
     			append_dev(svg, rect0);
     			append_dev(svg, path);
     			append_dev(svg, rect1);
     			append_dev(svg, rect2);
     			append_dev(svg, circle);
-    			insert_dev(target, t12, anchor);
-    			if (if_block1) if_block1.m(target, anchor);
     			insert_dev(target, t13, anchor);
     			if (if_block2) if_block2.m(target, anchor);
     			insert_dev(target, t14, anchor);
-    			if_block3.m(target, anchor);
+    			if (if_block3) if_block3.m(target, anchor);
     			insert_dev(target, t15, anchor);
-    			if (if_block4) if_block4.m(target, anchor);
-    			insert_dev(target, if_block4_anchor, anchor);
+    			if_block4.m(target, anchor);
+    			insert_dev(target, t16, anchor);
+    			if (if_block5) if_block5.m(target, anchor);
+    			insert_dev(target, if_block5_anchor, anchor);
     			current = true;
 
     			if (!mounted) {
@@ -1788,15 +1863,25 @@
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (/*colourNavbar*/ ctx[8]) {
-    				if (if_block0) ; else {
-    					if_block0 = create_if_block_5(ctx);
+    			if (current_block_type !== (current_block_type = select_block_type(ctx))) {
+    				if_block0.d(1);
+    				if_block0 = current_block_type(ctx);
+
+    				if (if_block0) {
     					if_block0.c();
     					if_block0.m(if_block0_anchor.parentNode, if_block0_anchor);
     				}
-    			} else if (if_block0) {
-    				if_block0.d(1);
-    				if_block0 = null;
+    			}
+
+    			if (!/*colourNavbar*/ ctx[8]) {
+    				if (if_block1) ; else {
+    					if_block1 = create_if_block_5(ctx);
+    					if_block1.c();
+    					if_block1.m(t1.parentNode, t1);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
     			}
 
     			if (!current || dirty & /*placeholder*/ 64) {
@@ -1839,36 +1924,15 @@
     				prop_dev(input1, "value", /*convertedText*/ ctx[7]);
     			}
 
-    			if (/*settingsMenuState*/ ctx[2] == true) {
-    				if (if_block1) {
-    					if_block1.p(ctx, dirty);
+    			if (/*settingsMenuState*/ ctx[2]) {
+    				if (if_block2) {
+    					if_block2.p(ctx, dirty);
 
     					if (dirty & /*settingsMenuState*/ 4) {
-    						transition_in(if_block1, 1);
-    					}
-    				} else {
-    					if_block1 = create_if_block_3(ctx);
-    					if_block1.c();
-    					transition_in(if_block1, 1);
-    					if_block1.m(t13.parentNode, t13);
-    				}
-    			} else if (if_block1) {
-    				group_outros();
-
-    				transition_out(if_block1, 1, 1, () => {
-    					if_block1 = null;
-    				});
-
-    				check_outros();
-    			}
-
-    			if (/*showCopyIndicator*/ ctx[5]) {
-    				if (if_block2) {
-    					if (dirty & /*showCopyIndicator*/ 32) {
     						transition_in(if_block2, 1);
     					}
     				} else {
-    					if_block2 = create_if_block_2(ctx);
+    					if_block2 = create_if_block_3(ctx);
     					if_block2.c();
     					transition_in(if_block2, 1);
     					if_block2.m(t14.parentNode, t14);
@@ -1883,25 +1947,46 @@
     				check_outros();
     			}
 
-    			if (current_block_type !== (current_block_type = select_block_type(ctx))) {
-    				if_block3.d(1);
-    				if_block3 = current_block_type(ctx);
-
+    			if (/*showCopyIndicator*/ ctx[5]) {
     				if (if_block3) {
+    					if (dirty & /*showCopyIndicator*/ 32) {
+    						transition_in(if_block3, 1);
+    					}
+    				} else {
+    					if_block3 = create_if_block_2(ctx);
     					if_block3.c();
+    					transition_in(if_block3, 1);
     					if_block3.m(t15.parentNode, t15);
+    				}
+    			} else if (if_block3) {
+    				group_outros();
+
+    				transition_out(if_block3, 1, 1, () => {
+    					if_block3 = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (current_block_type_1 !== (current_block_type_1 = select_block_type_1(ctx))) {
+    				if_block4.d(1);
+    				if_block4 = current_block_type_1(ctx);
+
+    				if (if_block4) {
+    					if_block4.c();
+    					if_block4.m(t16.parentNode, t16);
     				}
     			}
 
     			if (/*settingsMenuState*/ ctx[2]) {
-    				if (if_block4) ; else {
-    					if_block4 = create_if_block(ctx);
-    					if_block4.c();
-    					if_block4.m(if_block4_anchor.parentNode, if_block4_anchor);
+    				if (if_block5) ; else {
+    					if_block5 = create_if_block(ctx);
+    					if_block5.c();
+    					if_block5.m(if_block5_anchor.parentNode, if_block5_anchor);
     				}
-    			} else if (if_block4) {
-    				if_block4.d(1);
-    				if_block4 = null;
+    			} else if (if_block5) {
+    				if_block5.d(1);
+    				if_block5 = null;
     			}
     		},
     		i: function intro(local) {
@@ -1911,8 +1996,8 @@
     				transition_in(each_blocks[i]);
     			}
 
-    			transition_in(if_block1);
     			transition_in(if_block2);
+    			transition_in(if_block3);
     			current = true;
     		},
     		o: function outro(local) {
@@ -1922,25 +2007,27 @@
     				transition_out(each_blocks[i]);
     			}
 
-    			transition_out(if_block1);
     			transition_out(if_block2);
+    			transition_out(if_block3);
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (if_block0) if_block0.d(detaching);
+    			if_block0.d(detaching);
     			detach_dev(if_block0_anchor);
     			if (detaching) detach_dev(t0);
+    			if (if_block1) if_block1.d(detaching);
+    			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(main);
     			destroy_each(each_blocks, detaching);
-    			if (detaching) detach_dev(t12);
-    			if (if_block1) if_block1.d(detaching);
     			if (detaching) detach_dev(t13);
     			if (if_block2) if_block2.d(detaching);
     			if (detaching) detach_dev(t14);
-    			if_block3.d(detaching);
+    			if (if_block3) if_block3.d(detaching);
     			if (detaching) detach_dev(t15);
-    			if (if_block4) if_block4.d(detaching);
-    			if (detaching) detach_dev(if_block4_anchor);
+    			if_block4.d(detaching);
+    			if (detaching) detach_dev(t16);
+    			if (if_block5) if_block5.d(detaching);
+    			if (detaching) detach_dev(if_block5_anchor);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -1989,7 +2076,7 @@
     		setTimeout(() => $$invalidate(8, colourNavbar = true), 1000);
 
     		document.addEventListener("keyup", e => {
-    			if (e.ctrlKey && e.keyCode === 67) {
+    			if (e.ctrlKey && e.keyCode === 88) {
     				copyOutput();
     			}
     		});
