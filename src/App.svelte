@@ -180,6 +180,13 @@
   <button id="copy-button" on:click={copyOutput}><img src="./Copy.svg" alt="Copy"></button>
   <input type="text" id="copy-area" class="ssshhhh-Im-for-copying" value={convertedText} readonly/>
 
+  <div id="preloading-area" clas="ssshhhh">
+    <img class="preloader" src="./cursor1.png" alt="nothing to see here">
+    <img class="preloader" src="./cursor2.png" alt="nothing to see here">
+    <img class="preloader" src="./Chkbox_checked.svg"  alt="nothing to see here">
+    <img class="preloader" src="./Chkbox_unchecked.svg" alt="nothing to see here">
+  </div>
+
   <svg width="1152" height="502" viewBox="0 0 1152 502" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="1152" height="502" fill="white"/>
   <path id="triangle" d="M201.227 340.171L250.065 248.96L295.691 341.82L201.227 340.171Z" stroke="#FFC1C1" stroke-width="10"/>
@@ -611,6 +618,7 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 20px -4px inset, rgba(0, 0, 0, 0.3) 0px 6px 12px -6px inset;
   }
 
+  /* smh */
   #copy-area {
     position: absolute;
     pointer-events: none;
@@ -649,6 +657,23 @@
     color: white;
   }
 
+  /* What am I even doing */
+  #preloading-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Whats wrong with me */
+  .preloader {
+    width: 0rem;
+    height: 0rem;
+  }
 
   @media only screen and (max-width: 800px) {
     #title {
