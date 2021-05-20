@@ -16,6 +16,10 @@
 
   let showCopyIndicator = false;
 
+  let settingsMenu;
+
+  let settingsMenuOpen = false;
+
   const placeholders = [
     "PHNL",
     "PHOG",
@@ -41,6 +45,13 @@
     document.addEventListener('keyup', (e) => {
       if (e.ctrlKey && e.keyCode === 88) {
         copyOutput();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!settingsMenuOpen) return;
+      if (!settingsMenu.contains(e.target)) {
+        toggleSettings();
       }
     });
 
@@ -92,6 +103,11 @@
 
   function toggleSettings() {
     settingsMenuState = !settingsMenuState;
+    if (settingsMenuState) {
+      setTimeout(() => settingsMenuOpen = true, 400);
+    } else {
+      settingsMenuOpen = false;
+    }
   }
 
 
@@ -225,6 +241,7 @@
     id="settings-menu"
     in:fly={{ y: -300, duration: 400 }}
     out:fly={{ y: -300, duration: 700 }}
+    bind:this={settingsMenu}
   >
     <div class="settings-options">
       <label class="settings-label" for="recurs-lvl-set"
