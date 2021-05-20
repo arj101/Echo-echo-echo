@@ -1,11 +1,10 @@
 <script>
-  export let convertToAv;
-
   import { fade, fly } from "svelte/transition";
   import { onMount } from 'svelte';
   import Checkbox from "./Checkbox.svelte";
 
-  import convertFromAv from './convertFromAv.js'
+  import convertFromAv from './convertFromAv.js';
+  import convertToAv from './convertToAv.js';
 
   let input;
   let recursionLevel = 1;
@@ -132,6 +131,13 @@
       setTimeout(() => showCopyIndicator = false, 900);
     }
   }
+
+  function clearInput() {
+    if (input) {
+      input = "";
+      onInput();
+    }
+  }
 </script>
 
 <svelte:head>
@@ -173,18 +179,19 @@
     <!-- {/if} -->
     <p id="output">
       {#each convertedText as char}
-        <span transition:fade>{char}</span>
+        <span in:fade>{char}</span>
       {/each}
     </p>
   </div>
   <button id="copy-button" on:click={copyOutput}><img src="./Copy.svg" alt="Copy"></button>
+  <button id="clear-button" on:click={clearInput}><img src="./Clear.svg" alt="Clear"></button>
   <input type="text" id="copy-area" class="ssshhhh-Im-for-copying" value={convertedText} readonly/>
 
   <div id="preloading-area" clas="ssshhhh">
-    <img class="preloader" src="./cursor1.png" alt="nothing to see here">
-    <img class="preloader" src="./cursor2.png" alt="nothing to see here">
-    <img class="preloader" src="./Chkbox_checked.svg"  alt="nothing to see here">
-    <img class="preloader" src="./Chkbox_unchecked.svg" alt="nothing to see here">
+    <img class="preloader" src="./cursor1.png">
+    <img class="preloader" src="./cursor2.png">
+    <img class="preloader" src="./Chkbox_checked.svg">
+    <img class="preloader" src="./Chkbox_unchecked.svg">
   </div>
 
   <svg width="1152" height="502" viewBox="0 0 1152 502" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -225,11 +232,15 @@
       <Checkbox checked={reverseMode} on:click={toggleReverseMode}/>
       {#if reverseMode}
       <label class="settings-label" in:fly={{ x: -100, duration: 300}} out:fly={{ x: 100, duration: 300}}
-        >Add space between characters</label
+        >Space characters</label
       >
       <Checkbox checked={addSpaceBetweenChars} on:click={toggleSpaceInbetween}/>
       {/if}
     </div>
+  </div>
+
+  <div id="background-dimmer"  in:fly={{ y: -100, duration: 300 }}
+    out:fly={{ y: -100, duration: 300 }}>
   </div>
 {/if}
 
@@ -375,7 +386,7 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    z-index: 2;
+    z-index: 4;
   }
   #title {
     font-family: "Noto Sans JP", sans-serif;
@@ -476,7 +487,6 @@
     background-color:  hsla(263, 82%, 75%, 0);
     transition: all 500ms ease;
     cursor: pointer;
-    z-index: 3;
     -moz-user-select: none;
     -webkit-user-select: none;
     -moz-user-drag: none;
@@ -512,7 +522,7 @@
     height: fit-content;
     background-color: hsla(263, 82%, 69%, 0.6);
     backdrop-filter: blur(5px);
-    z-index: 2;
+    z-index: 5;
     border-radius: 0.5rem;
     box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px,
       rgba(0, 0, 0, 0.2) 0px 30px 60px -30px;
@@ -595,26 +605,62 @@
     place-items: center;
     background-color: #F17171;
     border-radius: 100%;
-    z-index: 3;
+    z-index: 2;
     cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.35) 0px 10px 15px -4px, rgba(0, 0, 0, 0.4) 0px 6px 9px -6px;
     transition: all 300ms ease;
   }
 
-  #copy-button img {
-    width: 1rem;
-    height: 1rem;
+  #clear-button {
+    position: fixed;
+    right: 1rem;
+    bottom: 5.3rem;
+    margin: 0;
+    border: 2px solid #F17171;
+    outline: none;
+    padding: 1rem;
+    display: grid;
+    place-items: center;
+    background-color: white;
+    border-radius: 100%;
+    z-index: 2;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.35) 0px 10px 15px -4px, rgba(0, 0, 0, 0.4) 0px 6px 9px -6px;
+    transition: all 300ms ease;
+  }
+
+  #clear-button img {
+    width: 1.3rem;
+    height: 1.3rem;
     -moz-user-select: none;
     -webkit-user-select: none;
     -moz-user-drag: none;
     -webkit-user-drag: none;
+    color: #F17171;
   }
 
   #copy-button:hover {
     border: 2px solid #FFF;
   }
 
+  #clear-button:hover {
+    border: 2px solid #FFF;
+  }
+
+  #copy-button img {
+    width: 1.3rem;
+    height: 1.3rem;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-drag: none;
+    -webkit-user-drag: none;
+  }
+
   #copy-button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 20px -4px inset, rgba(0, 0, 0, 0.3) 0px 6px 12px -6px inset;
+  }
+
+  #clear-button:active {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 20px -4px inset, rgba(0, 0, 0, 0.3) 0px 6px 12px -6px inset;
   }
 
@@ -673,6 +719,19 @@
   .preloader {
     width: 0rem;
     height: 0rem;
+  }
+
+  #background-dimmer {
+    position: absolute;
+    margin: 0;
+    border: none;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 3;
   }
 
   @media only screen and (max-width: 800px) {

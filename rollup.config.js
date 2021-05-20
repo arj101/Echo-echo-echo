@@ -1,7 +1,6 @@
 import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import wasm from '@rollup/plugin-wasm';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
@@ -58,8 +57,7 @@ export default {
 			browser: true,
 			dedupe: ['svelte']
 		}),
-
-		wasm(),
+		
 		commonjs(),
 
 		// In dev mode, call `npm run start` once
