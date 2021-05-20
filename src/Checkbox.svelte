@@ -1,6 +1,19 @@
 <script>
   export let checked = false;
 
+  import { onMount } from 'svelte';
+
+  onMount(() => {
+    for (const node of document.getElementsByTagName("button")) {
+      node.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      });
+    }
+  });
+
+
   function onClick() {
     checked = !checked;
   }
@@ -20,10 +33,6 @@
   img {
     width: 1.25rem;
     height: 1.25rem;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -moz-user-drag: none;
-    -webkit-user-drag: none;
   }
   button {
     display: grid;

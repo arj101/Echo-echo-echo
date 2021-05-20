@@ -43,6 +43,14 @@
         copyOutput();
       }
     });
+
+    for (const node of document.getElementsByTagName("button")) {
+      node.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      });
+    }
   });
 
   function onInput() {
@@ -158,33 +166,39 @@
 
 <main>
   <header id="topbar">
+
     <h1 id="title">
       <span id="e1">Echo</span> <span id="e2">Echo</span>
       <span id="e3">Echo</span>
     </h1>
+
     <button id="settings" on:click={toggleSettings}
       ><img
         src="./Settings.svg"
         alt="Settings"
         id="settings-svg"
-        class="select-disable"
       /></button
     >
   </header>
+
   <div id="content">
-    <!-- {#if reverseMode}
-      <textarea rows="4" class="input" on:input={onInput}>{input || ""}</textarea>   //maybe later
-    {:else} -->
-      <input class="input" bind:value={input} on:input={onInput} {placeholder}/>
-    <!-- {/if} -->
+    <input class="input" bind:value={input} on:input={onInput} {placeholder}/>
+
     <p id="output">
       {#each convertedText as char}
         <span in:fade>{char}</span>
       {/each}
     </p>
   </div>
-  <button id="copy-button" on:click={copyOutput}><img src="./Copy.svg" alt="Copy"></button>
-  <button id="clear-button" on:click={clearInput}><img src="./Clear.svg" alt="Clear"></button>
+
+  <button id="copy-button" on:click={copyOutput}>
+    <img src="./Copy.svg" alt="Copy">
+  </button>
+
+  <button id="clear-button" on:click={clearInput}>
+    <img src="./Clear.svg" alt="Clear">
+  </button>
+
   <input type="text" id="copy-area" class="ssshhhh-Im-for-copying" value={convertedText} readonly/>
 
   <div id="preloading-area" clas="ssshhhh">
@@ -195,14 +209,12 @@
   </div>
 
   <svg width="1152" height="502" viewBox="0 0 1152 502" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1152" height="502" fill="white"/>
-  <path id="triangle" d="M201.227 340.171L250.065 248.96L295.691 341.82L201.227 340.171Z" stroke="#FFC1C1" stroke-width="10"/>
-  <rect id="rect1" x="703.869" y="188.498" width="90" height="90" stroke="#C1FFF4" stroke-width="10"/>
-  <rect id="rect2" x="930.437" y="382.493" width="32" height="32" stroke="#CEFFC1" stroke-width="10"/>
-  <circle id="circle" cx="1007" cy="68" r="15" stroke="#FFF9C1" stroke-width="10"/>
+    <rect width="1152" height="502" fill="white"/>
+    <path id="triangle" d="M201.227 340.171L250.065 248.96L295.691 341.82L201.227 340.171Z" stroke="#FFC1C1" stroke-width="10"/>
+    <rect id="rect1" x="703.869" y="188.498" width="90" height="90" stroke="#C1FFF4" stroke-width="10"/>
+    <rect id="rect2" x="930.437" y="382.493" width="32" height="32" stroke="#CEFFC1" stroke-width="10"/>
+    <circle id="circle" cx="1007" cy="68" r="15" stroke="#FFF9C1" stroke-width="10"/>
   </svg>
-
-
 </main>
 
 
@@ -239,8 +251,7 @@
     </div>
   </div>
 
-  <div id="background-dimmer"  in:fly={{ y: -100, duration: 300 }}
-    out:fly={{ y: -100, duration: 300 }}>
+  <div id="background-dimmer" transition:fade>
   </div>
 {/if}
 
@@ -342,15 +353,6 @@
         transform: translateY(0%);
       }
     }
-
-  .select-disable {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    pointer-events: none;
-  }
 
   main {
     padding: 0;
@@ -496,10 +498,6 @@
   #settings-svg {
     width: 1.45rem;
     height: 1.45rem;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -moz-user-drag: none;
-    -webkit-user-drag: none;
   }
 
   #settings:focus {
