@@ -30,17 +30,18 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 a {
-	color: rgb(0,100,200);
+	color: white;
 	text-decoration: none;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-a:hover {
 	text-decoration: underline;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 a:visited {
-	color: rgb(0,80,160);
+	color: white;
 }
 
 label {

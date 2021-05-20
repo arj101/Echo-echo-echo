@@ -195,13 +195,15 @@
     <img src="./Copy.svg" alt="Copy">
   </button>
 
-  <button id="clear-button" on:click={clearInput}>
-    <img src="./Clear.svg" alt="Clear">
-  </button>
+  {#if input}
+    <button id="clear-button" on:click={clearInput} in:fly={{ x: 100, duration: 300}} out:fly={{ x: 100, duration: 500}}>
+      <img src="./Clear.svg" alt="Clear">
+    </button>
+  {/if}
 
   <input type="text" id="copy-area" class="ssshhhh-Im-for-copying" value={convertedText} readonly/>
 
-  <div id="preloading-area" clas="ssshhhh">
+  <div id="preloading-area" class="ssshhhh">
     <img class="preloader" src="./cursor1.png">
     <img class="preloader" src="./cursor2.png">
     <img class="preloader" src="./Chkbox_checked.svg">
@@ -443,7 +445,7 @@
     margin-left: 1rem;
     z-index: 1;
     width: calc(50vw - 1rem);
-    margin-bottom: 5.5rem;
+    margin-bottom: 9.6rem;
     -moz-user-select: all;
     -webkit-user-select: all;
   }
@@ -680,7 +682,6 @@
     right: 7rem;
     margin: 0;
     padding-inline: 2rem;
-    padding-block: 0.5rem;
     border: none;
     border-radius: 0.2rem;
     background-color: #F17171;
@@ -688,7 +689,7 @@
     place-items: center;
     box-shadow: rgba(50, 50, 93, 0.35) 0px 10px 15px -4px, rgba(0, 0, 0, 0.4) 0px 6px 9px -6px;
     z-index: 2;
-    height: 2rem;
+    height: 3.3rem;
   }
 
   #copy-indicator p {
