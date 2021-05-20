@@ -4,7 +4,7 @@ function convertToAv(text, recursionLevel) {
   text.forEach((c) => {
     convertedText += convertCharToAv(c) + " ";
   });
-  convertedText = convertedText.split(" ").filter((c) => c != " ").join(" ");
+  convertedText = convertedText.split(" ").filter((c) => c.length >= 1).join(" ");
   if (recursionLevel > 1) {
     recursionLevel--;
     return convertToAv(convertedText, recursionLevel);
