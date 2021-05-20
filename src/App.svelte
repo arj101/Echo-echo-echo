@@ -80,7 +80,7 @@
     let convertedText;
     if (reverseMode) {
       if (addSpaceBetweenChars) {
-        convertedText = convertFromAv(text, recursionLevel);
+        convertedText = convertFromAv(text, recursionLevel).split("");
       } else {
         convertedText = convertFromAv(text, recursionLevel).split(" ");
       }
