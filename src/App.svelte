@@ -263,7 +263,7 @@
       <input
         type="range"
         min="1"
-        max="3"
+        max="5"
         bind:value={recursionLevel}
         id="recurs-lvl-set"
         on:change={onInput}
