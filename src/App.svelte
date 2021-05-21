@@ -123,6 +123,7 @@
 
   function toggleReverseMode() {
     reverseMode = !reverseMode;
+    toggleSpaceInbetween = false;
     if (reverseMode) {
       let outputFieldText = placeholders[Math.floor(Math.random() * placeholders.length)];
       placeholder = convertToAv(outputFieldText, recursionLevel);

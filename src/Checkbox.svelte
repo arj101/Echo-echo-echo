@@ -3,16 +3,15 @@
 
   import { onMount } from 'svelte';
 
-  // onMount(() => {
-  //   for (const node of document.getElementsByTagName("button")) {
-  //     node.addEventListener('contextmenu', (e) => {
-  //       e.preventDefault();
-  //       e.stopPropagation();
-  //       return false;
-  //     });
-  //   }
-  // });
-
+  onMount(() => {
+    for (const node of document.getElementsByTagName("button")) {
+      node.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      });
+    }
+  });
 
   function onClick() {
     checked = !checked;
