@@ -472,7 +472,7 @@
     margin-left: 1rem;
     z-index: 1;
     width: calc(50vw - 1rem);
-    margin-bottom: 6.5rem;
+    margin-bottom: 9rem;
     -moz-user-select: all;
     -webkit-user-select: all;
   }
