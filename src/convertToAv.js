@@ -1,10 +1,10 @@
 function convertToAv(text, recursionLevel) {
-  text = text.split("");
   let convertedText = "";
-  text.forEach((c) => {
+
+  for (const c of text) {
     convertedText += convertCharToAv(c) + " ";
-  });
-  convertedText = convertedText.split(" ").filter((c) => c.length >= 1).join(" ");
+  };
+
   if (recursionLevel > 1) {
     recursionLevel--;
     return convertToAv(convertedText, recursionLevel);
@@ -43,6 +43,7 @@ function convertCharToAv(c) {
     case 'x': return "X-ray";
     case 'y': return "Yankee";
     case 'z': return "Zulu";
+    case ' ': return "";
     default: return c.toUpperCase();
   }
 }

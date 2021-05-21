@@ -1,21 +1,20 @@
 function convertFromAv(text, recursionLevel) {
-  text = text.split(" ").join("").toLowerCase();
+  text = text.toLowerCase();
   let currIdx = 0;
   let convertedText = "";
   while (currIdx < text.length) {
     let [char, avLength] = convertAvToChar(text.slice(currIdx));
-    convertedText += char + " ";
+    convertedText += char;
     currIdx += avLength;
   }
   if (recursionLevel > 1) {
     recursionLevel--;
     return convertFromAv(convertedText, recursionLevel);
   }
-  return convertedText;
+  return convertedText.split(" ").filter((c) => c.length >= 1).join("");
 }
 
 export default convertFromAv;
-
 
 function convertAvToChar(av) {
   switch (true) {
