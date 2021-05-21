@@ -7,11 +7,12 @@ function convertFromAv(text, recursionLevel) {
     convertedText += char;
     currIdx += avLength;
   }
+  
   if (recursionLevel > 1) {
     recursionLevel--;
     return convertFromAv(convertedText, recursionLevel);
   }
-  return convertedText.split(" ").filter((c) => c.length >= 1).join("");
+  return convertedText.split("").filter((c) => c.length >= 1 && c != " ").join(" ");
 }
 
 export default convertFromAv;

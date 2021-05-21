@@ -176,15 +176,7 @@
   {/if}
 </svelte:head>
 
-{#if !colourNavbar}
-  <style media="screen">
-    main {
-      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    }
-  </style>
-{/if}
-
-<main>
+<main class:shadow__main={!colourNavbar}>
   <header id="topbar">
 
     <h1 id="title">
@@ -204,7 +196,7 @@
   <div id="content">
     <input class="input" bind:value={input} on:input={onInput} {placeholder}/>
 
-    <p id="output">{convertedText}</p>
+    <p id="output" class:word-break__break_all={!reverseMode} class:word-break__break-word={reverseMode}>{convertedText}</p>
   </div>
 
   <button id="copy-button" on:click={copyOutput}>
@@ -293,20 +285,6 @@
   </div>
 {/if}
 
-{#if reverseMode}
-  <style>
-    #output {
-      word-break: break-all;
-    }
-  </style>
-{:else}
-  <style>
-    #output {
-      word-break: break-word;
-    }
-  </style>
-{/if}
-
 {#if settingsMenuState}
   <style>
     #content, #plen, #copy-button, #copy-indicator{
@@ -319,6 +297,14 @@
 {/if}
 
 <style>
+  .word-break__break-all {
+    word-break: break-all; /* yeah lol*/
+  }
+
+  .word-break__break-word {
+    word-break: break-word;
+  }
+
   svg {
     position: fixed;
     z-index: 0;
@@ -809,6 +795,11 @@
 
   .link:hover > .link-img {
     transform: translateX(15%);
+  }
+
+
+  .shadow__main {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
 
 
