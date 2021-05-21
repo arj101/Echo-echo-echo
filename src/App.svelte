@@ -204,11 +204,7 @@
   <div id="content">
     <input class="input" bind:value={input} on:input={onInput} {placeholder}/>
 
-    <p id="output">
-      {#each convertedText as char}
-        <span in:fade>{char}</span>
-      {/each}
-    </p>
+    <p id="output">{convertedText}</p>
   </div>
 
   <button id="copy-button" on:click={copyOutput}>
@@ -238,6 +234,18 @@
     <rect id="rect2" x="930.437" y="382.493" width="32" height="32" stroke="#CEFFC1" stroke-width="10"/>
     <circle id="circle" cx="1007" cy="68" r="15" stroke="#FFF9C1" stroke-width="10"/>
   </svg>
+
+  <footer>
+    <div class="link">
+      <img class="link-img" src="./Link.svg" alt="">
+      <a class="link-url" href="https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/">Inpired by A(x56)</a>
+    </div>
+
+    <div class="link">
+      <img class="link-img" src="./Link.svg" alt="">
+      <a class="link-url" href="https://github.com/arj101/Echo-echo-echo">View source code on Github</a>
+    </div>
+  </footer>
 </main>
 
 
@@ -388,7 +396,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     animation: scale-in 1s cubic-bezier(0.15, 0.71, 0.31, 0.91);
   }
 
@@ -454,10 +462,6 @@
     z-index: 1;
   }
 
-  textarea {
-    resize: none;
-  }
-
   #output {
     margin-top: 3rem;
     color: hsla(0, 0%, 17%, 1);
@@ -467,7 +471,7 @@
     margin-left: 1rem;
     z-index: 1;
     width: calc(50vw - 1rem);
-    margin-bottom: 9.6rem;
+    margin-bottom: 6.5rem;
     -moz-user-select: all;
     -webkit-user-select: all;
   }
@@ -754,6 +758,58 @@
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 3;
   }
+
+  footer {
+    margin: 0;
+    border: none;
+    padding: 0;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: stretch;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    transition: all 200ms ease;
+    z-index: 1;
+  }
+
+  .link {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .link-url {
+    color: black;
+    margin: 0.3rem;
+    font-family: 'Noto Sans JP';
+    font-weight: 300;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+
+  .link-url:hover {
+    text-decoration: underline;
+  }
+
+  .link-img {
+    margin: 0.25rem;
+    transition: all 300ms ease;
+    height: 1.2rem;
+    width: auto;
+  }
+
+  .link:hover > .link-img {
+    transform: translateX(15%);
+  }
+
 
   @media only screen and (max-width: 800px) {
     #title {
