@@ -239,7 +239,7 @@
 {#if settingsMenuState}
   <div
     id="settings-menu"
-    in:fly={{ y: -300, duration: 400 }}
+    in:fly={{ y: -300, duration: 300 }}
     out:fly={{ y: -300, duration: 700 }}
     bind:this={settingsMenu}
   >

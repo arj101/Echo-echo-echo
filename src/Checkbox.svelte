@@ -3,15 +3,15 @@
 
   import { onMount } from 'svelte';
 
-  onMount(() => {
-    for (const node of document.getElementsByTagName("button")) {
-      node.addEventListener('contextmenu', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-      });
-    }
-  });
+  // onMount(() => {
+  //   for (const node of document.getElementsByTagName("button")) {
+  //     node.addEventListener('contextmenu', (e) => {
+  //       e.preventDefault();
+  //       e.stopPropagation();
+  //       return false;
+  //     });
+  //   }
+  // });
 
 
   function onClick() {
@@ -20,19 +20,22 @@
 </script>
 
 <button on:click={onClick} on:click>
-    {#if checked}
-      <img
-        src="./Chkbox_checked.svg" alt="checkbox_checked">
-    {:else}
-      <img
-        src="./Chkbox_unchecked.svg" alt="checkbox_unchecked">
-    {/if}
+    <img id="im1"
+        src="./Chkbox_checked.svg" alt="checkbox_checked" class:active={checked} class:inactive={!checked}>
+    <img id="im2"
+        src="./Chkbox_unchecked.svg" alt="checkbox_unchecked"  class:active={!checked} class:inactive={checked}>
 </button>
 
 <style>
   img {
     width: 1.25rem;
     height: 1.25rem;
+    transition: all 200ms ease;
+  }
+  .inactive {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
   }
   button {
     display: grid;
