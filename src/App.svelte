@@ -123,14 +123,17 @@
 
   function toggleReverseMode() {
     reverseMode = !reverseMode;
-    toggleSpaceInbetween = false;
     if (reverseMode) {
       let outputFieldText = placeholders[Math.floor(Math.random() * placeholders.length)];
       placeholder = convertToAv(outputFieldText, recursionLevel);
       if (input) {
         convertedText = convertText(input, recursionLevel);
       } else {
-        convertedText = outputFieldText;
+        if (addSpaceBetweenChars) {
+          convertedText = outputFieldText.split("").join(" ");
+        } else {
+          convertedText = outputFieldText;
+        }
       }
     } else {
       placeholder = placeholders[Math.floor(Math.random() * placeholders.length)];
@@ -225,6 +228,7 @@
     <img class="preloader" src="./cursor2.png">
     <img class="preloader" src="./Chkbox_checked.svg">
     <img class="preloader" src="./Chkbox_unchecked.svg">
+    <img class="preloader" alt="./Clear.svg">
   </div>
 
   <svg width="1152" height="502" viewBox="0 0 1152 502" fill="none" xmlns="http://www.w3.org/2000/svg">
