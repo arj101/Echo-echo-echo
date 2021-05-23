@@ -1,5 +1,5 @@
 function convertFromAv(text, recursionLevel) {
-  text = text.toLowerCase();
+  text = text.split(" ").join("").toLowerCase();
   let currIdx = 0;
   let convertedText = "";
   while (currIdx < text.length) {
@@ -7,7 +7,7 @@ function convertFromAv(text, recursionLevel) {
     convertedText += char;
     currIdx += avLength;
   }
-  
+
   if (recursionLevel > 1) {
     recursionLevel--;
     return convertFromAv(convertedText, recursionLevel);
