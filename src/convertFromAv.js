@@ -30,22 +30,22 @@ function convertAvToChar(av, lubbleMode) {
     case av.startsWith("india"): return ["I", 5];
     case av.startsWith("juliett"): return ["J", 7];
     case av.startsWith("kilo"): return ["K", 4];
-    case av.startsWith("lima"): {
-      if (!lubbleMode) {
-        return ["L", 4]
-      } else {
-        break;
-      }
-    }
+    // case av.startsWith("lima"): {
+    //   if (!lubbleMode) {
+    //     return ["L", 4]
+    //   } else {
+    //     break;
+    //   }
+    // }
     case av.startsWith("mike"): return ["M", 4];
     case av.startsWith("november"): return ["N", 8];
-    case av.startsWith("oscar"): { 
-      if (!lubbleMode) {
-        return ["O", 5];
-      } else {
-        break;
-      }
-    }
+    // case av.startsWith("oscar"): { 
+    //   if (!lubbleMode) {
+    //     return ["O", 5];
+    //   } else {
+    //     break;
+    //   }
+    // }
     case av.startsWith("papa"): return ["P", 4];
     case av.startsWith("quebec"): return ["Q", 6];
     case av.startsWith("romeo"): return ["R", 5];
@@ -62,6 +62,11 @@ function convertAvToChar(av, lubbleMode) {
         switch (true) {
           case av.startsWith("lubble"): return ["L", 6];
           case av.startsWith("oof"): return ["O", 3];
+        }
+      } else {
+        switch (true) {
+          case av.startsWith("lima"): return ["L", 4];
+          case av.startsWith("oscar"): return ["O", 5];
         }
       }
       return [av[0].toUpperCase(), 1]
