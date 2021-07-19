@@ -17,6 +17,7 @@
   let showCopyIndicator = false;
 
   let settingsMenu;
+  let lubbleMode = false;
 
   let settingsMenuOpen = false;
 
@@ -70,7 +71,7 @@
         convertedText = convertText(input, recursionLevel);
       } else {
         let outputFieldText = placeholders[Math.floor(Math.random() * placeholders.length)];
-        placeholder = convertToAv(outputFieldText, recursionLevel);
+        placeholder = convertToAv(outputFieldText, recursionLevel, lubbleMode);
         if (addSpaceBetweenChars) {
           convertedText = outputFieldText.split("").join(" ");
         } else {
@@ -79,10 +80,10 @@
       }
     } else {
       if (input) {
-        convertedText = convertToAv(input, recursionLevel);
+        convertedText = convertToAv(input, recursionLevel, lubbleMode);
       } else {
         placeholder = placeholders[Math.floor(Math.random() * placeholders.length)];
-        convertedText = convertToAv(placeholder, recursionLevel);
+        convertedText = convertToAv(placeholder, recursionLevel, lubbleMode);
       }
     }
   }
@@ -91,12 +92,12 @@
     let convertedText;
     if (reverseMode) {
       if (addSpaceBetweenChars) {
-        convertedText = convertFromAv(text, recursionLevel);
+        convertedText = convertFromAv(text, recursionLevel, lubbleMode);
       } else {
-        convertedText = convertFromAv(text, recursionLevel).split(" ").join("");
+        convertedText = convertFromAv(text, recursionLevel, lubbleMode).split(" ").join("");
       }
     } else {
-      convertedText = convertToAv(text, recursionLevel);
+      convertedText = convertToAv(text, recursionLevel, lubbleMode);
     }
     return convertedText;
   }
@@ -114,7 +115,7 @@
   function updatePlaceholder() {
     if (reverseMode) {
       placeholder =
-        convertToAv(placeholders[Math.floor(Math.random() * placeholders.length)], recursionLevel);
+        convertToAv(placeholders[Math.floor(Math.random() * placeholders.length)], recursionLevel, lubbleMode);
     } else {
       placeholder =
         placeholders[Math.floor(Math.random() * placeholders.length)];
@@ -125,7 +126,7 @@
     reverseMode = !reverseMode;
     if (reverseMode) {
       let outputFieldText = placeholders[Math.floor(Math.random() * placeholders.length)];
-      placeholder = convertToAv(outputFieldText, recursionLevel);
+      placeholder = convertToAv(outputFieldText, recursionLevel, lubbleMode);
       if (input) {
         convertedText = convertText(input, recursionLevel);
       } else {
@@ -138,14 +139,20 @@
     } else {
       placeholder = placeholders[Math.floor(Math.random() * placeholders.length)];
       if (input) {
-        convertedText = convertToAv(input, recursionLevel);
+        convertedText = convertToAv(input, recursionLevel, lubbleMode);
       } else {
-        convertedText = convertToAv(placeholder, recursionLevel);
+        convertedText = convertToAv(placeholder, recursionLevel, lubbleMode);
       }
     }
   }
   function toggleSpaceInbetween() {
     addSpaceBetweenChars = !addSpaceBetweenChars;
+    onInput();
+  }
+
+  function toggleLubbleMode() {
+    lubbleMode = !lubbleMode;
+    console.log("lubble", lubbleMode);
     onInput();
   }
 
@@ -266,6 +273,8 @@
         >Reverse mode</label
       >
       <Checkbox checked={reverseMode} on:click={toggleReverseMode}/>
+      <label class="settings-label">Lubble mode</label>
+      <Checkbox checked={lubbleMode} on:click={toggleLubbleMode}/>
       {#if reverseMode}
       <label class="settings-label" in:fly={{ x: -100, duration: 300}} out:fly={{ x: 100, duration: 300}}
         >Space characters</label

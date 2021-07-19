@@ -1,13 +1,13 @@
-function convertToAv(text, recursionLevel) {
+function convertToAv(text, recursionLevel, lubbleMode) {
   let convertedText = "";
 
   for (const c of text) {
-    convertedText += convertCharToAv(c) + " ";
+    convertedText += convertCharToAv(c, lubbleMode) + " ";
   };
 
   if (recursionLevel > 1) {
     recursionLevel--;
-    return convertToAv(convertedText, recursionLevel);
+    return convertToAv(convertedText, recursionLevel, lubbleMode);
   } else {
     return convertedText;
   }
@@ -15,7 +15,7 @@ function convertToAv(text, recursionLevel) {
 
 export default convertToAv;
 
-function convertCharToAv(c) {
+function convertCharToAv(c, lubbleMode) {
   switch (c.toLowerCase()) {
     case 'a': return "Alpha";
     case 'b': return "Bravo";
@@ -28,10 +28,22 @@ function convertCharToAv(c) {
     case 'i': return "India";
     case 'j': return "Juliett";
     case 'k': return "Kilo";
-    case 'l': return "Lima";
+    case 'l': {
+      if (!lubbleMode) {
+        return "Lima"
+      } else {
+        return "Lubble"
+      }
+    }
     case 'm': return "Mike";
     case 'n': return "November";
-    case 'o': return "Oscar";
+    case 'o': {
+      if (!lubbleMode) {
+        return "Oscar"
+      } else {
+        return "Oof"
+      }
+    }
     case 'p': return "Papa";
     case 'q': return "Quebec";
     case 'r': return "Romeo";
