@@ -9,7 +9,7 @@ function convertToAv(text, recursionLevel, lubbleMode) {
     recursionLevel--;
     return convertToAv(convertedText, recursionLevel, lubbleMode);
   } else {
-    return convertedText;
+    return convertedText.split(" ").filter(c => c.length >= 1).join(" ");
   }
 }
 
