@@ -252,7 +252,7 @@
   <div
     id="settings-menu"
     in:fly={{ y: -300, duration: 300 }}
-    out:fly={{ y: -300, duration: 700 }}
+    out:fly={{ y: -300, duration: 300 }}
     bind:this={settingsMenu}
   >
     <div class="settings-options">
