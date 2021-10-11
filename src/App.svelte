@@ -486,7 +486,7 @@
     width: 40vw;
     height: fit-content;
     background-color: hsla(263, 82%, 69%, 0.6);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
     z-index: 5;
     border-radius: 0.5rem;
     box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px,
