@@ -519,7 +519,7 @@
     appearance: none;
     height: 1rem;
     width: 100%;
-    opacity: 0.5;
+    opacity: 1;
     transition: opacity 500ms ease;
     cursor: url(../cursor1.png) 10 10, pointer;
   }
