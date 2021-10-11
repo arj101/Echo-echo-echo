@@ -336,7 +336,7 @@
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
-    animation: scale-in 1s cubic-bezier(0.15, 0.71, 0.31, 0.91);
+    animation: scale-in 500ms cubic-bezier(0.15, 0.71, 0.31, 0.91);
   }
 
   @keyframes scale-in {
