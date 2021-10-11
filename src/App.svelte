@@ -42,7 +42,7 @@
   let colourNavbar = false;
 
   onMount(() => {
-    setTimeout(() => colourNavbar = true, 1000);
+    setTimeout(() => colourNavbar = true, 400);
     document.addEventListener('keyup', (e) => {
       if (e.ctrlKey && e.keyCode === 88) {
         copyOutput();
@@ -105,7 +105,7 @@
   function toggleSettings() {
     settingsMenuState = !settingsMenuState;
     if (settingsMenuState) {
-      setTimeout(() => settingsMenuOpen = true, 400);
+      setTimeout(() => settingsMenuOpen = true, 300);
     } else {
       settingsMenuOpen = false;
     }
@@ -152,7 +152,6 @@
 
   function toggleLubbleMode() {
     lubbleMode = !lubbleMode;
-    console.log("lubble", lubbleMode);
     onInput();
   }
 
@@ -218,6 +217,7 @@
 
   <input type="text" id="copy-area" class="ssshhhh-Im-for-copying" value={convertedText} readonly/>
 
+  <!-- i dont this works lol -->
   <div id="preloading-area" class="ssshhhh">
     <img class="preloader" src="./cursor1.png">
     <img class="preloader" src="./cursor2.png">
@@ -336,12 +336,12 @@
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
-    animation: scale-in 500ms cubic-bezier(0.15, 0.71, 0.31, 0.91);
+    animation: scale-in 400ms cubic-bezier(0.15, 0.71, 0.31, 0.91);
   }
 
   @keyframes scale-in {
     from{
-      transform: scale(0.5);
+      transform: scale(0.75);
       opacity: 0;
     }
     to {
