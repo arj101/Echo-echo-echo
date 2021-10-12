@@ -5,6 +5,7 @@
 
   import convertFromAv from './convertFromAv.js';
   import convertToAv from './convertToAv.js';
+  import backdrop from './backdrop.js';
 
   let input;
   let recursionLevel = 1;
@@ -43,6 +44,7 @@
 
   onMount(() => {
     setTimeout(() => colourNavbar = true, 400);
+    backdrop();
     document.addEventListener('keyup', (e) => {
       if (e.ctrlKey && e.keyCode === 88) {
         copyOutput();
@@ -199,6 +201,8 @@
     >
   </header>
 
+  <div id="line"></div>
+
   <div id="content">
     <input class="input" bind:value={input} on:input={onInput} {placeholder}/>
 
@@ -226,13 +230,13 @@
     <img class="preloader" alt="./Clear.svg">
   </div>
 
-  <svg width="1152" height="502" viewBox="0 0 1152 502" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- <svg width="1152" height="502" viewBox="0 0 1152 502" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="1152" height="502" fill="white"/>
     <path id="triangle" d="M201.227 340.171L250.065 248.96L295.691 341.82L201.227 340.171Z" stroke="#FFC1C1" stroke-width="10"/>
     <rect id="rect1" x="703.869" y="188.498" width="90" height="90" stroke="#C1FFF4" stroke-width="10"/>
     <rect id="rect2" x="930.437" y="382.493" width="32" height="32" stroke="#CEFFC1" stroke-width="10"/>
     <circle id="circle" cx="1007" cy="68" r="15" stroke="#FFF9C1" stroke-width="10"/>
-  </svg>
+  </svg> -->
 
   <footer>
     <div class="link">
@@ -749,13 +753,26 @@
     transform: translateX(15%);
   }
 
-
   .shadow__main {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
 
+  #line {
+    position: fixed;
+    top: 0;
+    right: 10rem;
+    width: 3rem;
+    height: 100vh;
+    background-color: #875BCD30;
+    z-index: 2;
+  }
 
   @media only screen and (max-width: 800px) {
+    #line {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
     #title {
       margin: 1rem;
     }
