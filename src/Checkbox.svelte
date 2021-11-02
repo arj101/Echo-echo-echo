@@ -43,14 +43,13 @@
     border-radius: 100%;
     background-color: rgba(255, 255, 255, 0);
     transition: all 300ms ease;
-    cursor: url(../cursor1.png) 10 10, pointer;
     padding: 0.5rem;
+    cursor: pointer;
   }
   button:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
   button:active {
     background-color: rgba(255, 255, 255, 0.4);
-    cursor: url(../cursor2.png) 5 5, pointer;
   }
 </style>

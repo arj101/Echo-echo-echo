@@ -502,7 +502,6 @@
     justify-content: start;
     flex-direction: column;
     padding: 2rem;
-    cursor: url(../cursor1.png) 10 10, auto;
   }
 
   .settings-options {
@@ -527,7 +526,7 @@
     width: 100%;
     opacity: 1;
     transition: opacity 500ms ease;
-    cursor: url(../cursor1.png) 10 10, pointer;
+    cursor: pointer;
   }
 
   #recurs-lvl-set::-webkit-slider-thumb {
@@ -553,15 +552,10 @@
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 400;
     color: white;
-    cursor: url(../cursor1.png) 10 10, pointer;
   }
 
   #recurs-lvl-set:hover {
     opacity: 1;
-  }
-
-  #recurs-lvl-set:active {
-    cursor: url(../cursor2.png) 5 5, pointer;
   }
 
   #copy-button {
@@ -603,6 +597,7 @@
   #clear-button img {
     width: 1.3rem;
     height: 1.3rem;
+    user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -moz-user-drag: none;
@@ -621,6 +616,7 @@
   #copy-button img {
     width: 1.3rem;
     height: 1.3rem;
+    user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -moz-user-drag: none;
