@@ -372,6 +372,7 @@
     font-size: 1.5rem;
     transition: margin 300ms ease;
     color: white;
+    user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
   }
@@ -415,6 +416,7 @@
     z-index: 1;
     width: calc(50vw - 1rem);
     margin-bottom: 9rem;
+    user-select: all;
     -moz-user-select: all;
     -webkit-user-select: all;
   }
@@ -460,6 +462,7 @@
     background-color:  hsla(263, 82%, 75%, 0);
     transition: all 500ms ease;
     cursor: pointer;
+    user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -moz-user-drag: none;
@@ -489,8 +492,7 @@
     top: 5rem;
     width: 40vw;
     height: fit-content;
-    background-color: hsla(263, 82%, 69%, 0.6);
-    backdrop-filter: blur(10px);
+    background-color: hsla(263, 82%, 69%, 1);
     z-index: 5;
     border-radius: 0.5rem;
     box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px,
