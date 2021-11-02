@@ -281,8 +281,7 @@
       <label class="settings-label">Lubble mode</label>
       <Checkbox checked={lubbleMode} on:click={toggleLubbleMode}/>
       {#if reverseMode}
-      <label class="settings-label" in:fly={{ x: -100, duration: 300}} out:fly={{ x: 100, duration: 300}}
-        >Space characters</label
+      <label class="settings-label">Space characters</label
       >
       <Checkbox checked={addSpaceBetweenChars} on:click={toggleSpaceInbetween}/>
       {/if}
