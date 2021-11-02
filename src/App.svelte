@@ -256,7 +256,7 @@
 {#if settingsMenuState}
   <div
     id="settings-menu"
-    in:scale={{duration: 250, start: 0.8, easing: backOut}}
+    in:scale={{duration: 250, start: 0.65, easing: backOut}}
     out:fade={{duration: 200}}
     bind:this={settingsMenu}
   >
