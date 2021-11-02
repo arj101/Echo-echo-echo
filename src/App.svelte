@@ -492,11 +492,13 @@
     top: 5rem;
     width: 40vw;
     height: fit-content;
-    background-color: hsla(263, 82%, 69%, 1);
+    /* background-color: hsla(263, 82%, 69%, 1); */
+    background: linear-gradient(to top left, #7D2DFF, #A36EFB);
     z-index: 5;
     border-radius: 0.5rem;
-    box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.2) 0px 30px 60px -30px;
+    /* box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.2) 0px 30px 60px -30px; */
+    box-shadow: 0px 50px 100px 0px #00000073;
     display: flex;
     align-items: center;
     justify-content: start;
