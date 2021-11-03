@@ -257,7 +257,7 @@
   <div
     id="settings-menu"
     in:scale={{duration: 250, start: 0.65, easing: backOut}}
-    out:scale={{duration: 200}}
+    out:scale={{duration: 200, start: 0.65}}
     bind:this={settingsMenu}
   >
     <div class="settings-options">
