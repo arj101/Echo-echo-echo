@@ -1,6 +1,6 @@
 <script>
   import { fade, fly, scale } from "svelte/transition";
-  import { backOut  } from "svelte/easing";
+  import { backOut } from "svelte/easing";
   import { onMount } from 'svelte';
   import Checkbox from "./Checkbox.svelte";
 
@@ -257,7 +257,7 @@
   <div
     id="settings-menu"
     in:scale={{duration: 250, start: 0.65, easing: backOut}}
-    out:fade={{duration: 200}}
+    out:scale={{duration: 200}}
     bind:this={settingsMenu}
   >
     <div class="settings-options">
