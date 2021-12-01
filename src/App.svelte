@@ -42,6 +42,9 @@
   let convertedText = convertText(placeholder, recursionLevel);
 
   let colourNavbar = false;
+  let keyArr = [];
+  
+  $: showHiddenOpt = keyArr === ['KeyL', 'KeyB', 'KeyL']
 
   onMount(() => {
     setTimeout(() => colourNavbar = true, 400);
@@ -49,6 +52,12 @@
     document.addEventListener('keyup', (e) => {
       if (e.ctrlKey && e.keyCode === 88) {
         copyOutput();
+        return;
+      } else if (e.ctrlKey) {
+        keyArr.push(e.code)
+        if (keyArr.length > 3) {
+          keyArr = keyArr.shift()
+        }
       }
     });
 
@@ -124,7 +133,6 @@
         placeholders[Math.floor(Math.random() * placeholders.length)];
     }
   }
-
   function toggleReverseMode() {
     reverseMode = !reverseMode;
     if (reverseMode) {
@@ -278,7 +286,9 @@
         >Reverse mode</label
       >
       <Checkbox checked={reverseMode} on:click={toggleReverseMode}/>
-      <label class="settings-label">Lubble mode</label>
+      {#if showHiddenOpt}
+        <label class="settings-label">Lubble mode</label>
+      {/if}
       <Checkbox checked={lubbleMode} on:click={toggleLubbleMode}/>
       {#if reverseMode}
       <label class="settings-label">Space characters</label
