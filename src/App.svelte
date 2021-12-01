@@ -44,8 +44,8 @@
   let colourNavbar = false;
   let keyArr = [];
   
-  $: showHiddenOpt = keyArr === ['KeyL', 'KeyB', 'KeyL']
-
+  $: showHiddenOpt = (() => keyArr === ['KeyL', 'KeyB', 'KeyL'])()
+  
   onMount(() => {
     setTimeout(() => colourNavbar = true, 400);
     backdrop();
