@@ -56,7 +56,7 @@
       } else if (e.shiftKey) {
         keyArr.push(e.code)
         if (keyArr.length > 3) {
-          keyArr = keyArr.shift()
+          keyArr.shift()
         }
       }
     });
@@ -286,7 +286,7 @@
         >Reverse mode</label
       >
       <Checkbox checked={reverseMode} on:click={toggleReverseMode}/>
-      {#if showHiddenOpt}
+      {#if keyArr === ['KeyL', 'KeyB', 'KeyL']}
         <label class="settings-label">Lubble mode</label>
         <Checkbox checked={lubbleMode} on:click={toggleLubbleMode}/>
       {/if}
