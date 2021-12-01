@@ -262,7 +262,7 @@
   >
     <div class="settings-options">
       <label class="settings-label" for="recurs-lvl-set"
-        >Recursion level: {recursionLevel}</label
+        >Recursion depth: {recursionLevel}</label
       >
       <input
         type="range"
