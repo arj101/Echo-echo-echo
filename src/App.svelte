@@ -53,7 +53,7 @@
       if (e.ctrlKey && e.keyCode === 88) {
         copyOutput();
         return;
-      } else if (e.ctrlKey) {
+      } else if (e.shiftKey) {
         keyArr.push(e.code)
         if (keyArr.length > 3) {
           keyArr = keyArr.shift()
@@ -288,8 +288,8 @@
       <Checkbox checked={reverseMode} on:click={toggleReverseMode}/>
       {#if showHiddenOpt}
         <label class="settings-label">Lubble mode</label>
+        <Checkbox checked={lubbleMode} on:click={toggleLubbleMode}/>
       {/if}
-      <Checkbox checked={lubbleMode} on:click={toggleLubbleMode}/>
       {#if reverseMode}
       <label class="settings-label">Space characters</label
       >
