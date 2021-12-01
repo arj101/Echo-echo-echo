@@ -44,8 +44,6 @@
   let colourNavbar = false;
   let keyArr = [];
   
-  $: showHiddenOpt = (() => keyArr === ['KeyL', 'KeyB', 'KeyL'])()
-  
   onMount(() => {
     setTimeout(() => colourNavbar = true, 400);
     backdrop();
@@ -286,7 +284,7 @@
         >Reverse mode</label
       >
       <Checkbox checked={reverseMode} on:click={toggleReverseMode}/>
-      {#if keyArr === ['KeyL', 'KeyB', 'KeyL']}
+      {#if keyArr.join('') === ['KeyL', 'KeyB', 'KeyL'].join('')}
         <label class="settings-label">Lubble mode</label>
         <Checkbox checked={lubbleMode} on:click={toggleLubbleMode}/>
       {/if}
